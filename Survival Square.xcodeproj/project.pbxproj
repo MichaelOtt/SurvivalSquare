@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D284EA11AAA761C006EC2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D284EA01AAA761C006EC2F5 /* AppDelegate.swift */; };
+		4D284EA31AAA761C006EC2F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D284EA21AAA761C006EC2F5 /* ViewController.swift */; };
+		4D284EA61AAA761C006EC2F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D284EA41AAA761C006EC2F5 /* Main.storyboard */; };
+		4D284EA81AAA761C006EC2F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D284EA71AAA761C006EC2F5 /* Images.xcassets */; };
+		4D284EAB1AAA761C006EC2F5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D284EA91AAA761C006EC2F5 /* LaunchScreen.xib */; };
+		4D284EB71AAA761C006EC2F5 /* Survival_SquareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D284EB61AAA761C006EC2F5 /* Survival_SquareTests.swift */; };
+		4DB76B881AAC2AF300646C7B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DB76B871AAC2AF300646C7B /* GameScene.sks */; };
+		4DB76B8A1AAC2B2900646C7B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB76B891AAC2B2900646C7B /* GameScene.swift */; };
+		4DB76B8C1AAC385800646C7B /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB76B8B1AAC385800646C7B /* Enemy.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4D284EB11AAA761C006EC2F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4D284E931AAA761C006EC2F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D284E9A1AAA761C006EC2F5;
+			remoteInfo = "Survival Square";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4D284E9B1AAA761C006EC2F5 /* Survival Square.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Survival Square.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D284E9F1AAA761C006EC2F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D284EA01AAA761C006EC2F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4D284EA21AAA761C006EC2F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4D284EA51AAA761C006EC2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4D284EA71AAA761C006EC2F5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4D284EAA1AAA761C006EC2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4D284EB01AAA761C006EC2F5 /* Survival SquareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Survival SquareTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D284EB51AAA761C006EC2F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D284EB61AAA761C006EC2F5 /* Survival_SquareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survival_SquareTests.swift; sourceTree = "<group>"; };
+		4DB76B871AAC2AF300646C7B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		4DB76B891AAC2B2900646C7B /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		4DB76B8B1AAC385800646C7B /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4D284E981AAA761C006EC2F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D284EAD1AAA761C006EC2F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D284E921AAA761C006EC2F5 = {
+			isa = PBXGroup;
+			children = (
+				4D284E9D1AAA761C006EC2F5 /* Survival Square */,
+				4D284EB31AAA761C006EC2F5 /* Survival SquareTests */,
+				4D284E9C1AAA761C006EC2F5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D284E9C1AAA761C006EC2F5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4D284E9B1AAA761C006EC2F5 /* Survival Square.app */,
+				4D284EB01AAA761C006EC2F5 /* Survival SquareTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D284E9D1AAA761C006EC2F5 /* Survival Square */ = {
+			isa = PBXGroup;
+			children = (
+				4D284EA01AAA761C006EC2F5 /* AppDelegate.swift */,
+				4DB76B871AAC2AF300646C7B /* GameScene.sks */,
+				4DB76B8B1AAC385800646C7B /* Enemy.swift */,
+				4DB76B891AAC2B2900646C7B /* GameScene.swift */,
+				4D284EA21AAA761C006EC2F5 /* ViewController.swift */,
+				4D284EA41AAA761C006EC2F5 /* Main.storyboard */,
+				4D284EA71AAA761C006EC2F5 /* Images.xcassets */,
+				4D284EA91AAA761C006EC2F5 /* LaunchScreen.xib */,
+				4D284E9E1AAA761C006EC2F5 /* Supporting Files */,
+			);
+			path = "Survival Square";
+			sourceTree = "<group>";
+		};
+		4D284E9E1AAA761C006EC2F5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4D284E9F1AAA761C006EC2F5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4D284EB31AAA761C006EC2F5 /* Survival SquareTests */ = {
+			isa = PBXGroup;
+			children = (
+				4D284EB61AAA761C006EC2F5 /* Survival_SquareTests.swift */,
+				4D284EB41AAA761C006EC2F5 /* Supporting Files */,
+			);
+			path = "Survival SquareTests";
+			sourceTree = "<group>";
+		};
+		4D284EB41AAA761C006EC2F5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4D284EB51AAA761C006EC2F5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D284E9A1AAA761C006EC2F5 /* Survival Square */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D284EBA1AAA761C006EC2F5 /* Build configuration list for PBXNativeTarget "Survival Square" */;
+			buildPhases = (
+				4D284E971AAA761C006EC2F5 /* Sources */,
+				4D284E981AAA761C006EC2F5 /* Frameworks */,
+				4D284E991AAA761C006EC2F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Survival Square";
+			productName = "Survival Square";
+			productReference = 4D284E9B1AAA761C006EC2F5 /* Survival Square.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4D284EAF1AAA761C006EC2F5 /* Survival SquareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D284EBD1AAA761C006EC2F5 /* Build configuration list for PBXNativeTarget "Survival SquareTests" */;
+			buildPhases = (
+				4D284EAC1AAA761C006EC2F5 /* Sources */,
+				4D284EAD1AAA761C006EC2F5 /* Frameworks */,
+				4D284EAE1AAA761C006EC2F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D284EB21AAA761C006EC2F5 /* PBXTargetDependency */,
+			);
+			name = "Survival SquareTests";
+			productName = "Survival SquareTests";
+			productReference = 4D284EB01AAA761C006EC2F5 /* Survival SquareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4D284E931AAA761C006EC2F5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Michael Ott";
+				TargetAttributes = {
+					4D284E9A1AAA761C006EC2F5 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					4D284EAF1AAA761C006EC2F5 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 4D284E9A1AAA761C006EC2F5;
+					};
+				};
+			};
+			buildConfigurationList = 4D284E961AAA761C006EC2F5 /* Build configuration list for PBXProject "Survival Square" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4D284E921AAA761C006EC2F5;
+			productRefGroup = 4D284E9C1AAA761C006EC2F5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D284E9A1AAA761C006EC2F5 /* Survival Square */,
+				4D284EAF1AAA761C006EC2F5 /* Survival SquareTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D284E991AAA761C006EC2F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DB76B881AAC2AF300646C7B /* GameScene.sks in Resources */,
+				4D284EA61AAA761C006EC2F5 /* Main.storyboard in Resources */,
+				4D284EAB1AAA761C006EC2F5 /* LaunchScreen.xib in Resources */,
+				4D284EA81AAA761C006EC2F5 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D284EAE1AAA761C006EC2F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4D284E971AAA761C006EC2F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DB76B8C1AAC385800646C7B /* Enemy.swift in Sources */,
+				4DB76B8A1AAC2B2900646C7B /* GameScene.swift in Sources */,
+				4D284EA31AAA761C006EC2F5 /* ViewController.swift in Sources */,
+				4D284EA11AAA761C006EC2F5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4D284EAC1AAA761C006EC2F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D284EB71AAA761C006EC2F5 /* Survival_SquareTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4D284EB21AAA761C006EC2F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4D284E9A1AAA761C006EC2F5 /* Survival Square */;
+			targetProxy = 4D284EB11AAA761C006EC2F5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4D284EA41AAA761C006EC2F5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D284EA51AAA761C006EC2F5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4D284EA91AAA761C006EC2F5 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D284EAA1AAA761C006EC2F5 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4D284EB81AAA761C006EC2F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4D284EB91AAA761C006EC2F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4D284EBB1AAA761C006EC2F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Survival Square/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4D284EBC1AAA761C006EC2F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Survival Square/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4D284EBE1AAA761C006EC2F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Survival SquareTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Survival Square.app/Survival Square";
+			};
+			name = Debug;
+		};
+		4D284EBF1AAA761C006EC2F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Survival SquareTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Survival Square.app/Survival Square";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4D284E961AAA761C006EC2F5 /* Build configuration list for PBXProject "Survival Square" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D284EB81AAA761C006EC2F5 /* Debug */,
+				4D284EB91AAA761C006EC2F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D284EBA1AAA761C006EC2F5 /* Build configuration list for PBXNativeTarget "Survival Square" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D284EBB1AAA761C006EC2F5 /* Debug */,
+				4D284EBC1AAA761C006EC2F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D284EBD1AAA761C006EC2F5 /* Build configuration list for PBXNativeTarget "Survival SquareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D284EBE1AAA761C006EC2F5 /* Debug */,
+				4D284EBF1AAA761C006EC2F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4D284E931AAA761C006EC2F5 /* Project object */;
+}
