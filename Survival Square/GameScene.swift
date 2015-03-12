@@ -3,7 +3,7 @@ import SpriteKit
 
 class GameScene: SKScene
 {
-    let player = SKSpriteNode(imageNamed:"triangle")
+    let player = Player(imageNamed:"triangle")
     var touches = NSSet()
     var touching = false
     var enemies = [Enemy]()
@@ -91,7 +91,7 @@ class GameScene: SKScene
         }
         for child:Enemy in enemies
         {
-            child.position = CGPointMake(child.position.x,child.position.y-5)
+            child.update(player.position)
         }
         /* Called before each frame is rendered */
     }
