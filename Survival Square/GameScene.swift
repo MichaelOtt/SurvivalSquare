@@ -3,16 +3,20 @@ import SpriteKit
 
 class GameScene: SKScene
 {
-    let player = Player(imageNamed:"triangle")
+    let player = Player()
     var touches = NSSet()
     var touching = false
     var enemies = [Enemy]()
+    var effectObjects = [EffectObject]()
+    class func scene(size:CGSize)->GameScene
+    {
+        return GameScene(size:size)
+    }
     override func didMoveToView(view: SKView)
     {
         player.position = CGPointMake(self.size.width/2,self.size.height/2)
-        player.xScale = 0.2
-        player.yScale = 0.2
         self.addChild(player)
+        addAbilityButtons()
     }
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent)
     {
@@ -37,12 +41,18 @@ class GameScene: SKScene
             
             //self.addChild(sprite)
     }
+    func addAbilityButtons()
+    {
+        let abilityButton = Ability(scene:self)
+        abilityButton.position = CGPointMake(self.size.width - abilityButton.size.width,0 + abilityButton.size.height)
+        addChild(abilityButton)
+    }
     func moveWithValues(xvalue:CGFloat,yvalue:CGFloat)
     {
         let speed:CGFloat = 10
         let px = player.position.x
         let py = player.position.y
-        player.position = CGPointMake(px + speed*xvalue,py + speed*yvalue)
+        player.changePosition(px+speed*xvalue,y:py+speed*yvalue)
         checkBounds()
     }
     func checkBounds()
@@ -67,7 +77,13 @@ class GameScene: SKScene
         }
         player.position = CGPointMake(xpos,ypos)
     }
-    
+    func createEnemy()
+    {
+        let enemySprite = Enemy()
+        enemySprite.position = CGPointMake(CGFloat(random()%Int(self.size.width)),CGFloat(random()%Int(self.size.height)))
+        enemies.append(enemySprite)
+        self.addChild(enemySprite)
+    }
     override func update(currentTime: CFTimeInterval)
     {
         if (touching)
@@ -80,18 +96,17 @@ class GameScene: SKScene
                 moveWithValues(xvalue,yvalue:yvalue)
             }
         }
-        if (random()%50==0)
+        if (random()%50 == -1)
         {
-            let enemySprite = Enemy(imageNamed:"red square")
-            enemySprite.xScale = 0.05
-            enemySprite.yScale = 0.05
-            enemySprite.position = CGPointMake(CGFloat(random()%Int(self.size.width)),CGFloat(random()%Int(self.size.height)))
-            enemies.append(enemySprite)
-            self.addChild(enemySprite)
+            createEnemy()
         }
         for child:Enemy in enemies
         {
             child.update(player.position)
+        }
+        for child:EffectObject in effectObjects
+        {
+            child.update(self)
         }
         /* Called before each frame is rendered */
     }

@@ -13,9 +13,16 @@ class Enemy: SKSpriteNode
 {
     var time:CGFloat = 0
     let maxSpeed:CGFloat = 7
-    class Enemy
+    override init()
     {
-    
+        let texture = SKTexture(imageNamed: "redDot")
+        super.init(texture: texture, color: nil, size: texture.size())
+        speed = 2
+        xScale = 0.025
+        yScale = 0.025
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     func update(player:CGPoint)
     {
