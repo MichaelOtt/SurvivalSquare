@@ -43,9 +43,15 @@ class GameScene: SKScene
     }
     func addAbilityButtons()
     {
-        let abilityButton = Ability(scene:self)
-        abilityButton.position = CGPointMake(self.size.width - abilityButton.size.width,0 + abilityButton.size.height)
-        addChild(abilityButton)
+        let effect1 = ExplosionEffect(scene:self)
+        let abilityButton1 = Ability(effect:effect1,imageName:"AbilityExplosion")
+        abilityButton1.position = CGPointMake(self.size.width - abilityButton1.size.width,0 + abilityButton1.size.height)
+        addChild(abilityButton1)
+        
+        let effect2 = TriangleShotEffect(scene:self)
+        let abilityButton2 = Ability(effect:effect2,imageName:"AbilityTriangleShot")
+        abilityButton2.position = CGPointMake(self.size.width - abilityButton2.size.width*2.5,0 + abilityButton2.size.height)
+        addChild(abilityButton2)
     }
     func moveWithValues(xvalue:CGFloat,yvalue:CGFloat)
     {
@@ -96,7 +102,7 @@ class GameScene: SKScene
                 moveWithValues(xvalue,yvalue:yvalue)
             }
         }
-        if (random()%50 == -1)
+        if (random()%50 == 0)
         {
             createEnemy()
         }
@@ -104,9 +110,15 @@ class GameScene: SKScene
         {
             child.update(player.position)
         }
-        for child:EffectObject in effectObjects
+        for (var i = 0; i < effectObjects.count; i++)
         {
-            child.update(self)
+            effectObjects[i].update(self)
+            if (effectObjects[i].removed)
+            {
+                effectObjects[i].removeFromParent()
+                effectObjects.removeAtIndex(i)
+                i--;
+            }
         }
         /* Called before each frame is rendered */
     }

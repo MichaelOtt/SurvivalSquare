@@ -19,6 +19,7 @@ class Player: SKSpriteNode
         speed = 2
         xScale = 0.035
         yScale = 0.035
+        zPosition = 100
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

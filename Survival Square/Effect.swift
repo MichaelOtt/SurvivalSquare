@@ -17,6 +17,6 @@ class Effect
     }
     func activate()
     {
-        scene.createEnemy()
+        
     }
 }

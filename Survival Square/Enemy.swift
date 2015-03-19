@@ -20,6 +20,7 @@ class Enemy: SKSpriteNode
         speed = 2
         xScale = 0.025
         yScale = 0.025
+        zPosition = 2
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

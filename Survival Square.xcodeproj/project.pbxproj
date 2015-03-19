@@ -14,6 +14,10 @@
 		4D284EAB1AAA761C006EC2F5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D284EA91AAA761C006EC2F5 /* LaunchScreen.xib */; };
 		4D284EB71AAA761C006EC2F5 /* Survival_SquareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D284EB61AAA761C006EC2F5 /* Survival_SquareTests.swift */; };
 		4D72F50D1AB1D7FB004DC046 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72F50C1AB1D7FB004DC046 /* Player.swift */; };
+		4D7DF9031ABA883F00E2A05A /* ExplosionEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DF9021ABA883F00E2A05A /* ExplosionEffect.swift */; };
+		4D7DF9051ABA888C00E2A05A /* ExplosionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DF9041ABA888C00E2A05A /* ExplosionObject.swift */; };
+		4D7DF9071ABA936B00E2A05A /* TriangleShotEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DF9061ABA936B00E2A05A /* TriangleShotEffect.swift */; };
+		4D7DF9091ABA938A00E2A05A /* TriangleShotObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DF9081ABA938A00E2A05A /* TriangleShotObject.swift */; };
 		4DAEE4C31AB626B6003F9CD5 /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEE4C21AB626B6003F9CD5 /* Ability.swift */; };
 		4DAEE4C51AB626DC003F9CD5 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEE4C41AB626DC003F9CD5 /* Effect.swift */; };
 		4DAEE4C91AB63115003F9CD5 /* EffectObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEE4C81AB63115003F9CD5 /* EffectObject.swift */; };
@@ -44,6 +48,10 @@
 		4D284EB51AAA761C006EC2F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D284EB61AAA761C006EC2F5 /* Survival_SquareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survival_SquareTests.swift; sourceTree = "<group>"; };
 		4D72F50C1AB1D7FB004DC046 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		4D7DF9021ABA883F00E2A05A /* ExplosionEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplosionEffect.swift; sourceTree = "<group>"; };
+		4D7DF9041ABA888C00E2A05A /* ExplosionObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplosionObject.swift; sourceTree = "<group>"; };
+		4D7DF9061ABA936B00E2A05A /* TriangleShotEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleShotEffect.swift; sourceTree = "<group>"; };
+		4D7DF9081ABA938A00E2A05A /* TriangleShotObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleShotObject.swift; sourceTree = "<group>"; };
 		4DAEE4C21AB626B6003F9CD5 /* Ability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
 		4DAEE4C41AB626DC003F9CD5 /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		4DAEE4C81AB63115003F9CD5 /* EffectObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectObject.swift; sourceTree = "<group>"; };
@@ -93,7 +101,11 @@
 			children = (
 				4DAEE4C21AB626B6003F9CD5 /* Ability.swift */,
 				4DAEE4C41AB626DC003F9CD5 /* Effect.swift */,
+				4D7DF9021ABA883F00E2A05A /* ExplosionEffect.swift */,
+				4D7DF9061ABA936B00E2A05A /* TriangleShotEffect.swift */,
 				4DAEE4C81AB63115003F9CD5 /* EffectObject.swift */,
+				4D7DF9041ABA888C00E2A05A /* ExplosionObject.swift */,
+				4D7DF9081ABA938A00E2A05A /* TriangleShotObject.swift */,
 				4D284EA01AAA761C006EC2F5 /* AppDelegate.swift */,
 				4DB76B871AAC2AF300646C7B /* GameScene.sks */,
 				4DB76B8B1AAC385800646C7B /* Enemy.swift */,
@@ -236,9 +248,13 @@
 			files = (
 				4DB76B8C1AAC385800646C7B /* Enemy.swift in Sources */,
 				4DAEE4C91AB63115003F9CD5 /* EffectObject.swift in Sources */,
+				4D7DF9091ABA938A00E2A05A /* TriangleShotObject.swift in Sources */,
+				4D7DF9051ABA888C00E2A05A /* ExplosionObject.swift in Sources */,
 				4DAEE4C51AB626DC003F9CD5 /* Effect.swift in Sources */,
 				4DB76B8A1AAC2B2900646C7B /* GameScene.swift in Sources */,
+				4D7DF9071ABA936B00E2A05A /* TriangleShotEffect.swift in Sources */,
 				4D284EA31AAA761C006EC2F5 /* ViewController.swift in Sources */,
+				4D7DF9031ABA883F00E2A05A /* ExplosionEffect.swift in Sources */,
 				4D72F50D1AB1D7FB004DC046 /* Player.swift in Sources */,
 				4DAEE4C31AB626B6003F9CD5 /* Ability.swift in Sources */,
 				4D284EA11AAA761C006EC2F5 /* AppDelegate.swift in Sources */,

@@ -11,10 +11,10 @@ import SpriteKit
 class Ability: SKSpriteNode
 {
     let effect:Effect
-    init(scene:GameScene)
+    init(effect:Effect, imageName:String)
     {
-        effect = Effect(scene:scene)
-        let texture = SKTexture(imageNamed: "AbilityBorder")
+        self.effect = effect
+        let texture = SKTexture(imageNamed: imageName)
         super.init(texture: texture, color: nil, size: texture.size())
         speed = 2
         xScale = 0.1
