@@ -1,22 +1,54 @@
 
 import SpriteKit
+import UIKit
+import CoreMotion
 
 class GameScene: SKScene
 {
     let player = Player()
+    var vc = GameViewController()
     var touches = NSSet()
     var touching = false
     var enemies = [Enemy]()
     var effectObjects = [EffectObject]()
-    class func scene(size:CGSize)->GameScene
+    var abilities = [Ability]()
+    var motionManager = CMMotionManager()
+    var accelx:Double = 0
+    var accely:Double = 0
+    var score:Int = 0
+    var scoreLbl:UILabel
+    /*class func scene(size:CGSize)->GameScene
     {
         return GameScene(size:size)
+    }*/
+    init(size:CGSize,vc:GameViewController)
+    {
+        self.vc = vc
+        scoreLbl = UILabel()
+        scoreLbl.frame = CGRectMake(10,10,200,21);
+        scoreLbl.text = "\(score)"
+        super.init(size:size)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     override func didMoveToView(view: SKView)
     {
         player.position = CGPointMake(self.size.width/2,self.size.height/2)
         self.addChild(player)
         addAbilityButtons()
+        
+        if motionManager.accelerometerAvailable
+        {
+            motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue())
+            {
+                (data, error)in
+                self.accelx = data.acceleration.x
+                self.accely = data.acceleration.y
+            }
+        }
+        self.view!.addSubview(scoreLbl)
     }
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent)
     {
@@ -44,14 +76,27 @@ class GameScene: SKScene
     func addAbilityButtons()
     {
         let effect1 = ExplosionEffect(scene:self)
-        let abilityButton1 = Ability(effect:effect1,imageName:"AbilityExplosion")
+        let abilityButton1 = Ability(effect:effect1,imageName:"AbilityExplosion",cooldown:500)
         abilityButton1.position = CGPointMake(self.size.width - abilityButton1.size.width,0 + abilityButton1.size.height)
+        abilityButton1.createCooldownRect(self)
         addChild(abilityButton1)
+        abilities.append(abilityButton1)
         
         let effect2 = TriangleShotEffect(scene:self)
-        let abilityButton2 = Ability(effect:effect2,imageName:"AbilityTriangleShot")
+        let abilityButton2 = Ability(effect:effect2,imageName:"AbilityTriangleShot",cooldown:500)
         abilityButton2.position = CGPointMake(self.size.width - abilityButton2.size.width*2.5,0 + abilityButton2.size.height)
+        abilityButton2.createCooldownRect(self)
         addChild(abilityButton2)
+        abilities.append(abilityButton2)
+    }
+    func drawRect(rect: CGRect)
+    {
+        let color:UIColor = UIColor(red:0.5,green:0.5,blue:0.5,alpha:0.3)
+        let shapeNode:SKShapeNode = SKShapeNode()
+        shapeNode.path = CGPathCreateWithRect(rect, nil)
+        shapeNode.fillColor = color
+        shapeNode.strokeColor = color
+        addChild(shapeNode)
     }
     func moveWithValues(xvalue:CGFloat,yvalue:CGFloat)
     {
@@ -92,23 +137,27 @@ class GameScene: SKScene
     }
     override func update(currentTime: CFTimeInterval)
     {
-        if (touching)
+        //drawRect(CGRectMake(60,170,200,80))
+        if motionManager.accelerometerActive
         {
-            for touch: AnyObject in touches
+            moveWithValues(CGFloat(-accely),yvalue:CGFloat(accelx))
+        }
+        else
+        {
+            if (touching)
             {
-                let location = touch.locationInNode(self)
-                let xvalue = (location.x/self.size.width*2-1)
-                let yvalue = (location.y/self.size.height*2-1)
-                moveWithValues(xvalue,yvalue:yvalue)
+                for touch: AnyObject in touches
+                {
+                    let location = touch.locationInNode(self)
+                    let xvalue = (location.x/self.size.width*2-1)
+                    let yvalue = (location.y/self.size.height*2-1)
+                    moveWithValues(xvalue,yvalue:yvalue)
+                }
             }
         }
         if (random()%50 == 0)
         {
             createEnemy()
-        }
-        for child:Enemy in enemies
-        {
-            child.update(player.position)
         }
         for (var i = 0; i < effectObjects.count; i++)
         {
@@ -120,6 +169,19 @@ class GameScene: SKScene
                 i--;
             }
         }
+        for ability:Ability in abilities
+        {
+            ability.update()
+        }
+        for child:Enemy in enemies
+        {
+            child.update(player.position)
+            if (child.checkContact(player))
+            {
+                //vc.segueToMain()
+            }
+        }
+        
         /* Called before each frame is rendered */
     }
 }

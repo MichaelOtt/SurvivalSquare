@@ -48,4 +48,16 @@ class Enemy: SKSpriteNode
         var normaly = dy/hyp
         self.position = CGPointMake(self.position.x + normalx*speed, self.position.y + normaly*speed)
     }
+    func checkContact(player:Player)->Bool
+    {
+        let radius = self.frame.width/2
+        let dx = self.position.x - player.position.x
+        let dy = self.position.y - player.position.y
+        let playerRadius = player.frame.width/2
+        if (dx*dx + dy*dy <= (radius+playerRadius)*(radius+playerRadius))
+        {
+            return true
+        }
+        return false
+    }
 }

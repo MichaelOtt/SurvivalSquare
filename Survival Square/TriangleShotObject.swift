@@ -60,6 +60,8 @@ class TriangleShotObject: EffectObject
                 scene.enemies[i].removeFromParent()
                 scene.enemies.removeAtIndex(i)
                 i--
+                scene.score++
+                scene.scoreLbl.text = "\(scene.score)"
             }
         }
     }
