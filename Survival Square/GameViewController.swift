@@ -63,13 +63,13 @@ class GameViewController: UIViewController {
     
     func segueToMain()
     {
-        var storyboard: UIStoryboard = UIStoryboard(name:"Main", bundle:nil)
-        
-        var vc: MenuViewController = storyboard.instantiateViewControllerWithIdentifier("menuViewController") as MenuViewController
-        
-        self.presentViewController(vc, animated: true, completion:nil)
+        self.performSegueWithIdentifier("goHome", sender: self)
     }
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        //let vc = segue.destinationViewController as? ViewController
+        //vc?.setLabel("hello")
+    }
     override func supportedInterfaceOrientations() -> Int {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
             //return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
@@ -87,5 +87,6 @@ class GameViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+
 }
 

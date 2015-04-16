@@ -10,15 +10,6 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
-    
-    var gameVC: GameViewController
-    var currentController: UIViewController?
-    required init(coder aDecoder: NSCoder)
-    {
-        self.gameVC = GameViewController()
-        self.currentController = nil
-        super.init(coder: aDecoder)
-    }
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -34,24 +25,23 @@ class MenuViewController: UIViewController {
             return Int(UIInterfaceOrientationMask.All.rawValue)
         }
     }
+    @IBAction func goBack(sender:UIStoryboardSegue)
+    {
+        
+    }
     @IBAction func playBtnPressed(sender: UIButton)
     {
         //presentController(gameVC)
     }
-    func presentController(controller: UIViewController)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
-        if (currentController != controller)
+        if segue.identifier=="showGameView"
         {
-            if (currentController != nil)
-            {
-                currentController!.willMoveToParentViewController(nil)
-                currentController!.view.removeFromSuperview()
-                currentController!.removeFromParentViewController()
-            }
-            self.addChildViewController(controller)
-            self.view.addSubview(controller.view)
-            controller.didMoveToParentViewController(self)
-            currentController = controller
+            //let vc = segue.destinationViewController as? GameViewController
+            //vc?.setLabel("hello")
+            //let messages = ["yay","nay"]
+            
+            //vc?.setMessagesArray(messages)
         }
     }
 }

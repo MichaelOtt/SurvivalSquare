@@ -6,7 +6,7 @@ import CoreMotion
 class GameScene: SKScene
 {
     let player = Player()
-    var vc = GameViewController()
+    var vc:GameViewController?
     var touches = NSSet()
     var touching = false
     var enemies = [Enemy]()
@@ -17,6 +17,7 @@ class GameScene: SKScene
     var accely:Double = 0
     var score:Int = 0
     var scoreLbl:UILabel
+    var stopped = false
     /*class func scene(size:CGSize)->GameScene
     {
         return GameScene(size:size)
@@ -137,51 +138,60 @@ class GameScene: SKScene
     }
     override func update(currentTime: CFTimeInterval)
     {
-        //drawRect(CGRectMake(60,170,200,80))
-        if motionManager.accelerometerActive
+        if (!stopped)
         {
-            moveWithValues(CGFloat(-accely),yvalue:CGFloat(accelx))
-        }
-        else
-        {
-            if (touching)
+            //drawRect(CGRectMake(60,170,200,80))
+            if motionManager.accelerometerActive
             {
-                for touch: AnyObject in touches
+                moveWithValues(CGFloat(-accely),yvalue:CGFloat(accelx))
+            }
+            else
+            {
+                if (touching)
                 {
-                    let location = touch.locationInNode(self)
-                    let xvalue = (location.x/self.size.width*2-1)
-                    let yvalue = (location.y/self.size.height*2-1)
-                    moveWithValues(xvalue,yvalue:yvalue)
+                    for touch: AnyObject in touches
+                    {
+                        let location = touch.locationInNode(self)
+                        let xvalue = (location.x/self.size.width*2-1)
+                        let yvalue = (location.y/self.size.height*2-1)
+                        moveWithValues(xvalue,yvalue:yvalue)
+                    }
                 }
             }
-        }
-        if (random()%50 == 0)
-        {
-            createEnemy()
-        }
-        for (var i = 0; i < effectObjects.count; i++)
-        {
-            effectObjects[i].update(self)
-            if (effectObjects[i].removed)
+            if (random()%50 == 0)
             {
-                effectObjects[i].removeFromParent()
-                effectObjects.removeAtIndex(i)
-                i--;
+                createEnemy()
             }
-        }
-        for ability:Ability in abilities
-        {
-            ability.update()
-        }
-        for child:Enemy in enemies
-        {
-            child.update(player.position)
-            if (child.checkContact(player))
+            for (var i = 0; i < effectObjects.count; i++)
             {
-                //vc.segueToMain()
+                effectObjects[i].update(self)
+                if (effectObjects[i].removed)
+                {
+                    effectObjects[i].removeFromParent()
+                    effectObjects.removeAtIndex(i)
+                    i--;
+                }
             }
-        }
+            for ability:Ability in abilities
+            {
+                ability.update()
+            }
+            for child:Enemy in enemies
+            {
+                child.update(player.position)
+                if (child.checkContact(player))
+                {
+                    stopped = true
+                    self.removeAllChildren()
+                    self.scoreLbl.removeFromSuperview()
+                    //self.motionManager.
+                    vc?.segueToMain()
+                    vc = nil
+                }
+            }
         
         /* Called before each frame is rendered */
+        }
     }
+    
 }
