@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YND-Nw-cKc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Menu View Controller-->
+        <scene sceneID="2jQ-V9-75B">
+            <objects>
+                <viewController storyboardIdentifier="menuViewController" id="YND-Nw-cKc" customClass="MenuViewController" customModule="Survival_Square" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mqP-ft-sKf"/>
+                        <viewControllerLayoutGuide type="bottom" id="wXx-SF-vBu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cAi-ua-tQB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yt2-v9-TDW">
+                                <rect key="frame" x="239" y="276" width="122" height="48"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playBtnPressed:" destination="YND-Nw-cKc" eventType="touchUpInside" id="Uds-Fq-AdG"/>
+                                    <segue destination="vXZ-lx-hvc" kind="show" identifier="showGameView" id="4WN-Ct-WYY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Yt2-v9-TDW" secondAttribute="centerY" id="e2b-zc-8uw"/>
+                            <constraint firstAttribute="centerX" secondItem="Yt2-v9-TDW" secondAttribute="centerX" id="pAz-Lf-EUc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yyd-fH-0Ra"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RTI-3D-DRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="927" y="203"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController storyboardIdentifier="gameViewController" id="vXZ-lx-hvc" customClass="GameViewController" customModule="Survival_Square" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <segue destination="uQR-AA-Iuf" kind="unwind" identifier="goHome" unwindAction="goBack:" id="clZ-oZ-28v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <exit id="uQR-AA-Iuf" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="171" y="203"/>
+        </scene>
+    </scenes>
+</document>
