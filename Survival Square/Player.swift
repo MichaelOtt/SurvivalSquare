@@ -12,7 +12,7 @@ import SpriteKit
 class Player: SKSpriteNode
 {
     var previous:CGPoint = CGPoint(x:0,y:0)
-    override init()
+    init()
     {
         let texture = SKTexture(imageNamed: "greenDot")
         super.init(texture: texture, color: nil, size: texture.size())

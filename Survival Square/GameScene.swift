@@ -18,13 +18,15 @@ class GameScene: SKScene
     var score:Int = 0
     var scoreLbl:UILabel
     var stopped = false
+    var selectedAbilities = [Effect]()
     /*class func scene(size:CGSize)->GameScene
     {
         return GameScene(size:size)
     }*/
-    init(size:CGSize,vc:GameViewController)
+    init(size:CGSize,vc:GameViewController,abilities:[Effect])
     {
         self.vc = vc
+        self.selectedAbilities=abilities
         scoreLbl = UILabel()
         scoreLbl.frame = CGRectMake(10,10,200,21);
         scoreLbl.text = "\(score)"
@@ -38,7 +40,7 @@ class GameScene: SKScene
     {
         player.position = CGPointMake(self.size.width/2,self.size.height/2)
         self.addChild(player)
-        addAbilityButtons()
+        addAbilityButtons(selectedAbilities)
         
         if motionManager.accelerometerAvailable
         {
@@ -51,15 +53,15 @@ class GameScene: SKScene
         }
         self.view!.addSubview(scoreLbl)
     }
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent)
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent)
     {
         touching = false
     }
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent)
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent)
     {
         self.touches = touches
     }
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent)
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent)
     {
         /* Called when a touch begins */
         touching = true
@@ -74,21 +76,40 @@ class GameScene: SKScene
             
             //self.addChild(sprite)
     }
-    func addAbilityButtons()
+    func addAbilityButtons(abilities:[Effect])
     {
-        let effect1 = ExplosionEffect(scene:self)
+        for (var i = 0; i < abilities.count; i++)
+        {
+            let effect = abilities[i]
+            effect.getScene(self)
+            var imageName:String
+            if (effect is ExplosionEffect)
+            {
+                imageName = "AbilityExplosion"
+            }
+            else
+            {
+                imageName = "AbilityTriangleShot"
+            }
+            let abilityButton = Ability(effect:effect,imageName:imageName,cooldown:500)
+            abilityButton.position = CGPointMake(self.size.width - (abilityButton.size.width * (1.0+1.5*CGFloat(i))),0 + abilityButton.size.height)
+            abilityButton.createCooldownRect(self)
+            addChild(abilityButton)
+            self.abilities.append(abilityButton)
+        }
+        /*let effect1 = ExplosionEffect(scene:self)
         let abilityButton1 = Ability(effect:effect1,imageName:"AbilityExplosion",cooldown:500)
         abilityButton1.position = CGPointMake(self.size.width - abilityButton1.size.width,0 + abilityButton1.size.height)
         abilityButton1.createCooldownRect(self)
         addChild(abilityButton1)
-        abilities.append(abilityButton1)
+        self.abilities.append(abilityButton1)
         
         let effect2 = TriangleShotEffect(scene:self)
         let abilityButton2 = Ability(effect:effect2,imageName:"AbilityTriangleShot",cooldown:500)
         abilityButton2.position = CGPointMake(self.size.width - abilityButton2.size.width*2.5,0 + abilityButton2.size.height)
         abilityButton2.createCooldownRect(self)
         addChild(abilityButton2)
-        abilities.append(abilityButton2)
+        self.abilities.append(abilityButton2)*/
     }
     func drawRect(rect: CGRect)
     {
@@ -129,12 +150,65 @@ class GameScene: SKScene
         }
         player.position = CGPointMake(xpos,ypos)
     }
-    func createEnemy()
+    func getDistance(firstPoint:CGPoint, secondPoint:CGPoint)->CGFloat
+    {
+        let dx = firstPoint.x - secondPoint.x
+        let dy = firstPoint.y - secondPoint.y
+        return sqrt(dx*dx+dy*dy)
+    }
+    func createEnemyAtPosition(position:CGPoint)
     {
         let enemySprite = Enemy()
-        enemySprite.position = CGPointMake(CGFloat(random()%Int(self.size.width)),CGFloat(random()%Int(self.size.height)))
+        enemySprite.position = position
         enemies.append(enemySprite)
         self.addChild(enemySprite)
+    }
+    func createEnemy()
+    {
+        var position:CGPoint
+        do
+        {
+            position = CGPointMake(CGFloat(random()%Int(self.size.width)),CGFloat(random()%Int(self.size.height)))
+        }while(getDistance(position,secondPoint: player.position)<50)
+        createEnemyAtPosition(position)
+    }
+    func createEnemyBlock()
+    {
+        let blockSide:CGFloat = 50.0
+        let blockNum = 3
+        let widthForRandom = self.size.width-blockSide
+        let heightForRandom = self.size.height-blockSide
+        let blockChange = blockSide/CGFloat(blockNum-1)
+        var centerPosition:CGPoint
+        do
+        {
+            centerPosition = CGPointMake(CGFloat(random()%Int(widthForRandom))+blockSide/2,CGFloat(random()%Int(heightForRandom))+blockSide/2)
+        }while(getDistance(centerPosition,secondPoint:player.position)<100)
+        let initialx = centerPosition.x - blockSide/2
+        let initialy = centerPosition.y - blockSide/2
+        for (var r = 0; r < blockNum; r++)
+        {
+            for (var c = 0; c < blockNum; c++)
+            {
+                createEnemyAtPosition(CGPointMake(initialx + blockChange * CGFloat(c),initialy + blockChange * CGFloat(r)))
+            }
+        }
+    }
+    func createEnemyCircle()
+    {
+        let radius:CGFloat = 150.0
+        let num = 10
+        let angleChange:CGFloat = CGFloat(2) * CGFloat(M_PI) / CGFloat(num)
+        for (var i = 0; i < num; i++)
+        {
+            let dx = cos(angleChange*CGFloat(i))*radius
+            let dy = sin(angleChange*CGFloat(i))*radius
+            let position:CGPoint = CGPointMake(player.position.x + dx, player.position.y + dy)
+            if (position.x > 0 && position.x < self.size.width && position.y > 0 && position.y < self.size.height)
+            {
+                createEnemyAtPosition(position)
+            }
+        }
     }
     override func update(currentTime: CFTimeInterval)
     {
@@ -161,6 +235,14 @@ class GameScene: SKScene
             if (random()%50 == 0)
             {
                 createEnemy()
+            }
+            if (random()%1000 == 0)
+            {
+                createEnemyBlock()
+            }
+            if (random()%1000 == 0)
+            {
+                createEnemyCircle()
             }
             for (var i = 0; i < effectObjects.count; i++)
             {

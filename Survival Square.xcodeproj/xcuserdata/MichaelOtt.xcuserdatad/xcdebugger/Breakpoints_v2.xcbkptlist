@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
             endingLineNumber = "105"
-            landmarkName = "moveWithValues(_:yvalue:)"
+            landmarkName = "addAbilityButtons(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -40,6 +40,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Survival_Square.GameScene.init (Survival_Square.GameScene.Type)(size : C.CGSize) -&gt; Survival_Square.GameScene"
                   moduleName = "Survival Square"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/MichaelOtt/Desktop/Survival%20Square/Survival%20Square/GameScene.swift"
                   timestampString = "447493293.420092"
                   startingColumnNumber = "9223372036854775807"
@@ -54,6 +55,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Survival_Square.GameScene.init (Survival_Square.GameScene.Type)() -&gt; Survival_Square.GameScene"
                   moduleName = "Survival Square"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/MichaelOtt/Desktop/Survival%20Square/Survival%20Square/GameScene.swift"
                   timestampString = "447493293.422325"
                   startingColumnNumber = "9223372036854775807"
@@ -68,6 +70,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Survival_Square.GameScene.init (Survival_Square.GameScene.Type)(coder : ObjectiveC.NSCoder) -&gt; Swift.Optional&lt;Survival_Square.GameScene&gt;"
                   moduleName = "Survival Square"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/MichaelOtt/Desktop/Survival%20Square/Survival%20Square/GameScene.swift"
                   timestampString = "447493293.423074"
                   startingColumnNumber = "9223372036854775807"
@@ -86,11 +89,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Survival Square/Enemy.swift"
-            timestampString = "449044867.605018"
+            timestampString = "451464210.334497"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "Enemy"
             landmarkType = "3">
          </BreakpointContent>
@@ -116,6 +119,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Survival_Square.GameScene.touching.getter : Swift.Bool"
                   moduleName = "Survival Square"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/MichaelOtt/Desktop/Survival%20Square/Survival%20Square/GameScene.swift"
                   timestampString = "447495889.178941"
                   startingColumnNumber = "9223372036854775807"
@@ -130,6 +134,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Survival_Square.GameScene.touching.materializeForSet : Swift.Bool"
                   moduleName = "Survival Square"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/MichaelOtt/Desktop/Survival%20Square/Survival%20Square/GameScene.swift"
                   timestampString = "447495889.17932"
                   startingColumnNumber = "9223372036854775807"
@@ -144,6 +149,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Survival_Square.GameScene.init (Survival_Square.GameScene.Type)(size : C.CGSize) -&gt; Survival_Square.GameScene"
                   moduleName = "Survival Square"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/MichaelOtt/Desktop/Survival%20Square/Survival%20Square/GameScene.swift"
                   timestampString = "447495889.179446"
                   startingColumnNumber = "9223372036854775807"
@@ -158,6 +164,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Survival_Square.GameScene.init (Survival_Square.GameScene.Type)() -&gt; Survival_Square.GameScene"
                   moduleName = "Survival Square"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/MichaelOtt/Desktop/Survival%20Square/Survival%20Square/GameScene.swift"
                   timestampString = "447495889.179611"
                   startingColumnNumber = "9223372036854775807"
@@ -172,6 +179,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Survival_Square.GameScene.init (Survival_Square.GameScene.Type)(coder : ObjectiveC.NSCoder) -&gt; Swift.Optional&lt;Survival_Square.GameScene&gt;"
                   moduleName = "Survival Square"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/MichaelOtt/Desktop/Survival%20Square/Survival%20Square/GameScene.swift"
                   timestampString = "447495889.179759"
                   startingColumnNumber = "9223372036854775807"
@@ -204,6 +212,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Survival_Square.Enemy.Enemy.deinit"
                   moduleName = "Survival Square"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/MichaelOtt/Desktop/Survival%20Square/Survival%20Square/Enemy.swift"
                   timestampString = "447863252.429196"
                   startingColumnNumber = "9223372036854775807"
@@ -218,6 +227,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Survival_Square.Enemy.Enemy.init (Survival_Square.Enemy.Enemy.Type)() -&gt; Survival_Square.Enemy.Enemy"
                   moduleName = "Survival Square"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/MichaelOtt/Desktop/Survival%20Square/Survival%20Square/Enemy.swift"
                   timestampString = "447863252.429592"
                   startingColumnNumber = "9223372036854775807"
@@ -321,7 +331,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
             endingLineNumber = "66"
-            landmarkName = "segueToMain()"
+            landmarkName = "setCurrentAbilities(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -332,11 +342,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Survival Square/MenuViewController.swift"
-            timestampString = "450860908.767115"
+            timestampString = "451462153.349088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "playBtnPressed(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -401,7 +411,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
             endingLineNumber = "96"
-            landmarkName = "drawRect(_:)"
+            landmarkName = "addAbilityButtons(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -497,7 +507,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
-            landmarkName = "init(size:vc:)"
+            landmarkName = "init(size:vc:abilities:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -508,13 +518,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Survival Square/GameScene.swift"
-            timestampString = "450864757.091371"
+            timestampString = "451464006.326146"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
             landmarkName = "update(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Survival Square/SelectionViewController.swift"
+            timestampString = "451457905.009097"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "SelectionViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

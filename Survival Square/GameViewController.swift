@@ -13,12 +13,12 @@ import SpriteKit
 // no idea what this does
 extension SKNode {
     class func unarchiveFromFile(file : NSString) -> SKNode? {
-        if let path = NSBundle.mainBundle().pathForResource(file, ofType: "sks") {
+        if let path = NSBundle.mainBundle().pathForResource(file as String, ofType: "sks") {
             var sceneData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)!
             var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
             
             archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
-            let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as GameScene
+            let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! GameScene
             archiver.finishDecoding()
             return scene
         } else {
@@ -29,25 +29,26 @@ extension SKNode {
 // not really sure what this does either
 class GameViewController: UIViewController {
     
+    var abilities = [Effect]()
     override func viewDidLoad() {
         super.viewDidLoad()
         //if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
         var width:CGFloat
         var height:CGFloat
-        if (UIDevice.currentDevice().orientation == .Portrait || UIDevice.currentDevice().orientation == .PortraitUpsideDown)
-        {
+        //if (UIDevice.currentDevice().orientation == .Portrait || UIDevice.currentDevice().orientation == .PortraitUpsideDown)
+        //{
             width = view.frame.size.width
             height = view.frame.size.height
-        }
-        else
-        {
-            width = view.frame.size.height
-            height = view.frame.size.width
-        }
+        //}
+        //else
+        //{
+            //width = view.frame.size.height
+            //height = view.frame.size.width
+        //}
         
-        let scene = GameScene(size:CGSize(width:width,height:height),vc:self)
+        let scene = GameScene(size:CGSize(width:width,height:height),vc:self,abilities:abilities)
         // Configure the view.
-        let skView = self.view as SKView
+        let skView = self.view as! SKView
         //skView.showsFPS = true
         //skView.showsNodeCount = true
         
@@ -60,7 +61,10 @@ class GameViewController: UIViewController {
         skView.presentScene(scene)
         
     }
-    
+    func setCurrentAbilities(abilities: [Effect])
+    {
+        self.abilities = abilities
+    }
     func segueToMain()
     {
         self.performSegueWithIdentifier("goHome", sender: self)

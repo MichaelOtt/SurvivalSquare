@@ -14,9 +14,9 @@ class TriangleShotEffect:Effect
     override func activate()
     {
         let triangleShot = TriangleShotObject()
-        triangleShot.position = scene.player.position
-        triangleShot.zRotation = scene.player.zRotation
-        scene.effectObjects.append(triangleShot)
-        scene.addChild(triangleShot)
+        triangleShot.position = scene!.player.position
+        triangleShot.zRotation = scene!.player.zRotation
+        scene!.effectObjects.append(triangleShot)
+        scene!.addChild(triangleShot)
     }
 }

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YND-Nw-cKc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YND-Nw-cKc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Menu View Controller-->
@@ -27,10 +28,22 @@
                                     <segue destination="vXZ-lx-hvc" kind="show" identifier="showGameView" id="4WN-Ct-WYY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsE-29-P9X">
+                                <rect key="frame" x="239" y="220" width="122" height="43"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Select Abilities">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="MFS-e7-1Fu" kind="show" identifier="showSelectionView" id="QxL-1y-mcH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="lsE-29-P9X" secondAttribute="centerY" constant="58.5" id="8Ni-1l-QAa"/>
                             <constraint firstAttribute="centerY" secondItem="Yt2-v9-TDW" secondAttribute="centerY" id="e2b-zc-8uw"/>
+                            <constraint firstAttribute="centerX" secondItem="lsE-29-P9X" secondAttribute="centerX" id="lZZ-hS-45w"/>
                             <constraint firstAttribute="centerX" secondItem="Yt2-v9-TDW" secondAttribute="centerX" id="pAz-Lf-EUc"/>
                         </constraints>
                     </view>
@@ -38,7 +51,74 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTI-3D-DRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="927" y="203"/>
+            <point key="canvasLocation" x="235" y="219"/>
+        </scene>
+        <!--Selection View Controller-->
+        <scene sceneID="bt8-0d-ek7">
+            <objects>
+                <viewController id="MFS-e7-1Fu" customClass="SelectionViewController" customModule="Survival_Square" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qvP-Op-pO3"/>
+                        <viewControllerLayoutGuide type="bottom" id="9eH-tZ-XGf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oXQ-Vs-KvL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0t-F0-wvz">
+                                <rect key="frame" x="16" y="28" width="75" height="44"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Jp9-dw-gMk" kind="unwind" unwindAction="goBack:" id="1f2-Pa-Uxa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WT-P2-NvR">
+                                <rect key="frame" x="16" y="87" width="75" height="75"/>
+                                <state key="normal" title="Button" image="AbilityExplosion">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="explosionAbility:" destination="MFS-e7-1Fu" eventType="touchUpInside" id="sAW-6D-ZdH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzA-bA-hpM">
+                                <rect key="frame" x="99" y="87" width="75" height="75"/>
+                                <state key="normal" title="Button" image="AbilityTriangleShot">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="triangleShotAbility:" destination="MFS-e7-1Fu" eventType="touchUpInside" id="fWB-W2-qQP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zR2-RB-dlP">
+                                <rect key="frame" x="16" y="505" width="75" height="75"/>
+                                <state key="normal" title="Button" image="AbilityExplosion">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="abilitySelectBtn1:" destination="MFS-e7-1Fu" eventType="touchUpInside" id="Xra-JZ-EJW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0WT-P2-NvR" firstAttribute="top" secondItem="qvP-Op-pO3" secondAttribute="bottom" constant="67" id="4dO-Sf-2Zr"/>
+                            <constraint firstItem="g0t-F0-wvz" firstAttribute="leading" secondItem="oXQ-Vs-KvL" secondAttribute="leadingMargin" id="DN1-e9-aBB"/>
+                            <constraint firstItem="g0t-F0-wvz" firstAttribute="top" secondItem="qvP-Op-pO3" secondAttribute="bottom" constant="8" id="KVt-1f-ovG"/>
+                            <constraint firstItem="0WT-P2-NvR" firstAttribute="leading" secondItem="oXQ-Vs-KvL" secondAttribute="leadingMargin" id="cZ4-Vj-ACa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="selectBtn1" destination="zR2-RB-dlP" id="wnG-Am-mbs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dlk-Ww-Ly2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Jp9-dw-gMk" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="235" y="-467"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -61,7 +141,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <exit id="uQR-AA-Iuf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="171" y="203"/>
+            <point key="canvasLocation" x="965" y="219"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AbilityExplosion" width="500" height="500"/>
+        <image name="AbilityTriangleShot" width="500" height="500"/>
+    </resources>
 </document>

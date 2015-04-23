@@ -10,8 +10,16 @@ import Foundation
 
 class Effect
 {
-    let scene:GameScene
+    var scene:GameScene?
     init(scene:GameScene)
+    {
+        self.scene = scene
+    }
+    init()
+    {
+        
+    }
+    func getScene(scene:GameScene)
     {
         self.scene = scene
     }

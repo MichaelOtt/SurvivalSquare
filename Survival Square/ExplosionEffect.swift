@@ -14,8 +14,8 @@ class ExplosionEffect:Effect
     override func activate()
     {
         let explosion = ExplosionObject()
-        explosion.position = scene.player.position
-        scene.effectObjects.append(explosion)
-        scene.addChild(explosion)
+        explosion.position = scene!.player.position
+        scene!.effectObjects.append(explosion)
+        scene!.addChild(explosion)
     }
 }

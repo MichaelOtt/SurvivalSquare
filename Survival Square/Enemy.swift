@@ -13,11 +13,11 @@ class Enemy: SKSpriteNode
 {
     var time:CGFloat = 0
     let maxSpeed:CGFloat = 7
-    override init()
+    init()
     {
         let texture = SKTexture(imageNamed: "redDot")
         super.init(texture: texture, color: nil, size: texture.size())
-        speed = 2
+        speed = 1
         xScale = 0.025
         yScale = 0.025
         zPosition = 2
@@ -28,14 +28,17 @@ class Enemy: SKSpriteNode
     func update(player:CGPoint)
     {
         time++
-        moveTowardsPoint(player)
-        if (speed < maxSpeed)
+        if (time > 50)
         {
-            speed += time*0.00001
-        }
-        else
-        {
-            speed = maxSpeed
+            moveTowardsPoint(player)
+            if (speed < maxSpeed)
+            {
+                speed += time*0.00001
+            }
+            else
+            {
+                speed = maxSpeed
+            }
         }
         
     }
@@ -50,13 +53,16 @@ class Enemy: SKSpriteNode
     }
     func checkContact(player:Player)->Bool
     {
-        let radius = self.frame.width/2
-        let dx = self.position.x - player.position.x
-        let dy = self.position.y - player.position.y
-        let playerRadius = player.frame.width/2
-        if (dx*dx + dy*dy <= (radius+playerRadius)*(radius+playerRadius))
+        if (time > 50)
         {
-            return true
+            let radius = self.frame.width/2
+            let dx = self.position.x - player.position.x
+            let dy = self.position.y - player.position.y
+            let playerRadius = player.frame.width/2
+            if (dx*dx + dy*dy <= (radius+playerRadius)*(radius+playerRadius))
+            {
+                return true
+            }
         }
         return false
     }

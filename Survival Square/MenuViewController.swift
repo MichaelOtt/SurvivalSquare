@@ -10,8 +10,12 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
+    var abilities = [Effect]()
     override func viewDidLoad()
     {
+        abilities.append(ExplosionEffect())
+        abilities.append(ExplosionEffect())
+        abilities.append(TriangleShotEffect())
         super.viewDidLoad()
         //let storyboard: UIStoryboard = UIStoryboard(name:"Main", bundle:nil)
         //gameVC = storyboard.instantiateViewControllerWithIdentifier("gameViewController") as GameViewController
@@ -25,6 +29,10 @@ class MenuViewController: UIViewController {
             return Int(UIInterfaceOrientationMask.All.rawValue)
         }
     }
+    func setCurrentAbilities(abilities: [Effect])
+    {
+        self.abilities = abilities
+    }
     @IBAction func goBack(sender:UIStoryboardSegue)
     {
         
@@ -37,11 +45,13 @@ class MenuViewController: UIViewController {
     {
         if segue.identifier=="showGameView"
         {
-            //let vc = segue.destinationViewController as? GameViewController
-            //vc?.setLabel("hello")
-            //let messages = ["yay","nay"]
-            
-            //vc?.setMessagesArray(messages)
+            let vc = segue.destinationViewController as? GameViewController
+            vc?.setCurrentAbilities(abilities)
+        }
+        if segue.identifier=="showSelectionView"
+        {
+            let vc = segue.destinationViewController as? SelectionViewController
+            vc?.setCurrentAbilities(abilities)
         }
     }
 }
