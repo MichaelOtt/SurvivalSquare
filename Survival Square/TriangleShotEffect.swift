@@ -19,4 +19,8 @@ class TriangleShotEffect:Effect
         scene!.effectObjects.append(triangleShot)
         scene!.addChild(triangleShot)
     }
+    override func getCooldown() -> Int
+    {
+        return 200
+    }
 }

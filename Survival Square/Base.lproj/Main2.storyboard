@@ -65,9 +65,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0t-F0-wvz">
-                                <rect key="frame" x="16" y="28" width="75" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0t-F0-wvz">
+                                <rect key="frame" x="20" y="28" width="75" height="44"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9Mg-f3-AKz"/>
+                                    <constraint firstAttribute="width" constant="75" id="tNg-0H-fIb"/>
+                                </constraints>
                                 <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -75,8 +79,12 @@
                                     <segue destination="Jp9-dw-gMk" kind="unwind" unwindAction="goBack:" id="1f2-Pa-Uxa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WT-P2-NvR">
-                                <rect key="frame" x="16" y="87" width="75" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WT-P2-NvR">
+                                <rect key="frame" x="20" y="87" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="MBZ-Z9-AUn"/>
+                                    <constraint firstAttribute="height" constant="75" id="tpf-dH-cPS"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="AbilityExplosion">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -84,8 +92,12 @@
                                     <action selector="explosionAbility:" destination="MFS-e7-1Fu" eventType="touchUpInside" id="sAW-6D-ZdH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzA-bA-hpM">
-                                <rect key="frame" x="99" y="87" width="75" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BzA-bA-hpM">
+                                <rect key="frame" x="115" y="87" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="X1x-Pb-Yfh"/>
+                                    <constraint firstAttribute="width" constant="75" id="eND-xe-7C2"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="AbilityTriangleShot">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -93,27 +105,32 @@
                                     <action selector="triangleShotAbility:" destination="MFS-e7-1Fu" eventType="touchUpInside" id="fWB-W2-qQP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zR2-RB-dlP">
-                                <rect key="frame" x="16" y="505" width="75" height="75"/>
-                                <state key="normal" title="Button" image="AbilityExplosion">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsP-wD-i0G">
+                                <rect key="frame" x="210" y="87" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="FaV-zh-OVd"/>
+                                    <constraint firstAttribute="height" constant="75" id="yWu-PA-wY0"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="AbilityTurret">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="abilitySelectBtn1:" destination="MFS-e7-1Fu" eventType="touchUpInside" id="Xra-JZ-EJW"/>
+                                    <action selector="turretAbility:" destination="MFS-e7-1Fu" eventType="touchUpInside" id="AyX-SR-DsC"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0WT-P2-NvR" firstAttribute="top" secondItem="qvP-Op-pO3" secondAttribute="bottom" constant="67" id="4dO-Sf-2Zr"/>
-                            <constraint firstItem="g0t-F0-wvz" firstAttribute="leading" secondItem="oXQ-Vs-KvL" secondAttribute="leadingMargin" id="DN1-e9-aBB"/>
-                            <constraint firstItem="g0t-F0-wvz" firstAttribute="top" secondItem="qvP-Op-pO3" secondAttribute="bottom" constant="8" id="KVt-1f-ovG"/>
-                            <constraint firstItem="0WT-P2-NvR" firstAttribute="leading" secondItem="oXQ-Vs-KvL" secondAttribute="leadingMargin" id="cZ4-Vj-ACa"/>
+                            <constraint firstItem="SsP-wD-i0G" firstAttribute="top" secondItem="qvP-Op-pO3" secondAttribute="bottom" constant="67" id="Dj3-Xe-dca"/>
+                            <constraint firstItem="SsP-wD-i0G" firstAttribute="leading" secondItem="BzA-bA-hpM" secondAttribute="trailing" constant="20" id="EWo-2q-94t"/>
+                            <constraint firstItem="g0t-F0-wvz" firstAttribute="leading" secondItem="oXQ-Vs-KvL" secondAttribute="leadingMargin" constant="4" id="GVS-oZ-Yd9"/>
+                            <constraint firstItem="0WT-P2-NvR" firstAttribute="leading" secondItem="oXQ-Vs-KvL" secondAttribute="leadingMargin" constant="4" id="LoR-p3-z6r"/>
+                            <constraint firstItem="g0t-F0-wvz" firstAttribute="top" secondItem="qvP-Op-pO3" secondAttribute="bottom" constant="8" id="dBr-V5-WPx"/>
+                            <constraint firstItem="0WT-P2-NvR" firstAttribute="top" secondItem="g0t-F0-wvz" secondAttribute="bottom" constant="15" id="jaG-hz-eup"/>
+                            <constraint firstItem="BzA-bA-hpM" firstAttribute="leading" secondItem="0WT-P2-NvR" secondAttribute="trailing" constant="20" id="rSK-Pl-HCD"/>
+                            <constraint firstItem="BzA-bA-hpM" firstAttribute="top" secondItem="qvP-Op-pO3" secondAttribute="bottom" constant="67" id="vOU-3g-33M"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="selectBtn1" destination="zR2-RB-dlP" id="wnG-Am-mbs"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlk-Ww-Ly2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Jp9-dw-gMk" userLabel="Exit" sceneMemberID="exit"/>
@@ -147,5 +164,6 @@
     <resources>
         <image name="AbilityExplosion" width="500" height="500"/>
         <image name="AbilityTriangleShot" width="500" height="500"/>
+        <image name="AbilityTurret" width="500" height="500"/>
     </resources>
 </document>

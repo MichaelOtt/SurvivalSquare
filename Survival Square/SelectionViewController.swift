@@ -11,10 +11,13 @@ import UIKit
 class SelectionViewController: UIViewController {
 
     var abilities = [Effect]()
-    @IBOutlet var selectBtn1:UIButton!
+    var buttons = [UIButton]()
+    var functions = [Void]()
+    //@IBOutlet var selectBtn1:UIButton!
     var currentSelection:Int = -1
     override func viewDidLoad() {
         super.viewDidLoad()
+        createButtons()
         updateButtons()
         // Do any additional setup after loading the view.
     }
@@ -22,22 +25,44 @@ class SelectionViewController: UIViewController {
     {
         self.abilities = abilities
     }
+    func createButtons()
+    {
+        for (var i = 0; i < abilities.count; i++)
+        {
+            let image = UIImage(named: getImageName(abilities[i]))
+            let button = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+            button.frame = CGRectMake(CGFloat(20+i*95),self.view.frame.height - 95,CGFloat(75),CGFloat(75))
+            button.setImage(image, forState: .Normal)
+            button.addTarget(self,action:"buttonAction:",forControlEvents:.TouchUpInside)
+            buttons.append(button)
+            self.view.addSubview(button)
+        }
+    }
+    func buttonAction(sender:UIButton!)
+    {
+        for (var i = 0; i < buttons.count; i++)
+        {
+            if (buttons[i] == sender)
+            {
+                currentSelection = i
+            }
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func abilitySelectBtn1(sender: UIButton)
+    /*@IBAction func abilitySelectBtn1(sender: UIButton)
     {
         currentSelection = 0
-        selectBtn1.highlighted = true;
-    }
-    
+        //selectBtn1.highlighted = true
+    }*/
     @IBAction func explosionAbility(sender: UIButton)
     {
         if (currentSelection != -1)
         {
             abilities[currentSelection] = ExplosionEffect()
-            selectBtn1.highlighted = false
+            //selectBtn1.highlighted = false
             currentSelection = -1
         }
         updateButtons()
@@ -47,20 +72,58 @@ class SelectionViewController: UIViewController {
         if (currentSelection != -1)
         {
             abilities[currentSelection] = TriangleShotEffect()
-            selectBtn1.highlighted = false
+            //selectBtn1.highlighted = false
             currentSelection = -1
         }
         updateButtons()
     }
+    @IBAction func turretAbility(sender: UIButton)
+    {
+        if (currentSelection != -1)
+        {
+            abilities[currentSelection] = TurretEffect()
+            //selectBtn1.highlighted = false
+            currentSelection = -1
+        }
+        updateButtons()
+    }
+    func getImageName(ability: Effect) -> String
+    {
+        if ability is ExplosionEffect
+        {
+            return "AbilityExplosion"
+        }
+        else if ability is TriangleShotEffect
+        {
+            return "AbilityTriangleShot"
+        }
+        else if ability is TurretEffect
+        {
+            return "AbilityTurret"
+        }
+        return "NoEffect"
+    }
     func updateButtons()
     {
-        if (abilities[0] is ExplosionEffect)
+        for (var i = 0; i < abilities.count; i++)
         {
-            selectBtn1.imageView!.image = UIImage(named: "AbilityExplosion")
+            buttons[i].setImage(UIImage(named: getImageName(abilities[i])), forState: .Normal)
+        }
+        /*if (abilities[0] is ExplosionEffect)
+        {
+            selectBtn1.setImage(UIImage(named: "AbilityExplosion"), forState: .Normal)
         }
         else
         {
-            selectBtn1.imageView!.image = UIImage(named: "AbilityTriangleShot")
+            selectBtn1.setImage(UIImage(named: "AbilityTriangleShot"), forState: .Normal)
+        }*/
+    }
+    override func supportedInterfaceOrientations() -> Int {
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+            //return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
+            return Int(UIInterfaceOrientationMask.Landscape.rawValue)
+        } else {
+            return Int(UIInterfaceOrientationMask.All.rawValue)
         }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)

@@ -1,5 +1,5 @@
 //
-//  ExplosionEffect.swift
+//  TurretEffect.swift
 //  Survival Square
 //
 //  Created by Michael Ott on 3/19/15.
@@ -9,17 +9,17 @@
 import Foundation
 import SpriteKit
 
-class ExplosionEffect:Effect
+class TurretEffect:Effect
 {
     override func activate()
     {
-        let explosion = ExplosionObject()
-        explosion.position = scene!.player.position
-        scene!.effectObjects.append(explosion)
-        scene!.addChild(explosion)
+        let turret = TurretObject()
+        turret.position = scene!.player.position
+        scene!.effectObjects.append(turret)
+        scene!.addChild(turret)
     }
     override func getCooldown() -> Int
     {
-        return 500
+        return 700
     }
 }

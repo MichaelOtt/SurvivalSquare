@@ -87,11 +87,15 @@ class GameScene: SKScene
             {
                 imageName = "AbilityExplosion"
             }
-            else
+            else if(effect is TriangleShotEffect)
             {
                 imageName = "AbilityTriangleShot"
             }
-            let abilityButton = Ability(effect:effect,imageName:imageName,cooldown:500)
+            else
+            {
+                imageName = "AbilityTurret"
+            }
+            let abilityButton = Ability(effect:effect,imageName:imageName,cooldown:effect.getCooldown())
             abilityButton.position = CGPointMake(self.size.width - (abilityButton.size.width * (1.0+1.5*CGFloat(i))),0 + abilityButton.size.height)
             abilityButton.createCooldownRect(self)
             addChild(abilityButton)

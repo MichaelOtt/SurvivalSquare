@@ -27,8 +27,10 @@ class Ability: SKSpriteNode
         yScale = 0.1
         userInteractionEnabled = true
         zPosition = 50
-        
-        
+    }
+    func getCooldown() -> Int
+    {
+        return 500
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -27,4 +27,8 @@ class Effect
     {
         
     }
+    func getCooldown() -> Int
+    {
+        return 500
+    }
 }

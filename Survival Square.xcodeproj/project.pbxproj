@@ -23,10 +23,11 @@
 		4DB76B881AAC2AF300646C7B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4DB76B871AAC2AF300646C7B /* GameScene.sks */; };
 		4DB76B8A1AAC2B2900646C7B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB76B891AAC2B2900646C7B /* GameScene.swift */; };
 		4DB76B8C1AAC385800646C7B /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB76B8B1AAC385800646C7B /* Enemy.swift */; };
+		4DC07F341AF206FB0080E895 /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC07F321AF206FB0080E895 /* Main2.storyboard */; };
+		4DDBD2B31AF26F430007A186 /* TurretEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBD2B21AF26F430007A186 /* TurretEffect.swift */; };
+		4DDBD2B51AF26FB50007A186 /* TurretObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBD2B41AF26FB50007A186 /* TurretObject.swift */; };
 		4DFEB87F1AC3DC28001FEF24 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB87E1AC3DC28001FEF24 /* GameViewController.swift */; };
 		4DFEB8811AC3DCA5001FEF24 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB8801AC3DCA5001FEF24 /* MenuViewController.swift */; };
-		4DFFB2171AE8BD640005CAD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DFFB2151AE8BD640005CAD4 /* Main.storyboard */; };
-		4DFFB2181AE8BD640005CAD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DFFB2151AE8BD640005CAD4 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,9 +61,11 @@
 		4DB76B871AAC2AF300646C7B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		4DB76B891AAC2B2900646C7B /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		4DB76B8B1AAC385800646C7B /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		4DC07F331AF206FB0080E895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main2.storyboard; sourceTree = "<group>"; };
+		4DDBD2B21AF26F430007A186 /* TurretEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurretEffect.swift; sourceTree = "<group>"; };
+		4DDBD2B41AF26FB50007A186 /* TurretObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurretObject.swift; sourceTree = "<group>"; };
 		4DFEB87E1AC3DC28001FEF24 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		4DFEB8801AC3DCA5001FEF24 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		4DFFB2161AE8BD640005CAD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +111,11 @@
 				4DAEE4C41AB626DC003F9CD5 /* Effect.swift */,
 				4D7DF9021ABA883F00E2A05A /* ExplosionEffect.swift */,
 				4D7DF9061ABA936B00E2A05A /* TriangleShotEffect.swift */,
+				4DDBD2B21AF26F430007A186 /* TurretEffect.swift */,
 				4DAEE4C81AB63115003F9CD5 /* EffectObject.swift */,
 				4D7DF9041ABA888C00E2A05A /* ExplosionObject.swift */,
 				4D7DF9081ABA938A00E2A05A /* TriangleShotObject.swift */,
+				4DDBD2B41AF26FB50007A186 /* TurretObject.swift */,
 				4D284EA01AAA761C006EC2F5 /* AppDelegate.swift */,
 				4DB76B871AAC2AF300646C7B /* GameScene.sks */,
 				4DB76B8B1AAC385800646C7B /* Enemy.swift */,
@@ -119,7 +124,7 @@
 				4DFEB87E1AC3DC28001FEF24 /* GameViewController.swift */,
 				4DFEB8801AC3DCA5001FEF24 /* MenuViewController.swift */,
 				4D79C9D21AE8B0FA0069307E /* SelectionViewController.swift */,
-				4DFFB2151AE8BD640005CAD4 /* Main.storyboard */,
+				4DC07F321AF206FB0080E895 /* Main2.storyboard */,
 				4D284EA71AAA761C006EC2F5 /* Images.xcassets */,
 				4D284EA91AAA761C006EC2F5 /* LaunchScreen.xib */,
 				4D284E9E1AAA761C006EC2F5 /* Supporting Files */,
@@ -235,7 +240,7 @@
 				4DB76B881AAC2AF300646C7B /* GameScene.sks in Resources */,
 				4D284EAB1AAA761C006EC2F5 /* LaunchScreen.xib in Resources */,
 				4D284EA81AAA761C006EC2F5 /* Images.xcassets in Resources */,
-				4DFFB2171AE8BD640005CAD4 /* Main.storyboard in Resources */,
+				4DC07F341AF206FB0080E895 /* Main2.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +248,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DFFB2181AE8BD640005CAD4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,11 +262,13 @@
 				4DAEE4C91AB63115003F9CD5 /* EffectObject.swift in Sources */,
 				4D7DF9091ABA938A00E2A05A /* TriangleShotObject.swift in Sources */,
 				4DFEB8811AC3DCA5001FEF24 /* MenuViewController.swift in Sources */,
+				4DDBD2B31AF26F430007A186 /* TurretEffect.swift in Sources */,
 				4D7DF9051ABA888C00E2A05A /* ExplosionObject.swift in Sources */,
 				4DFEB87F1AC3DC28001FEF24 /* GameViewController.swift in Sources */,
 				4DAEE4C51AB626DC003F9CD5 /* Effect.swift in Sources */,
 				4DB76B8A1AAC2B2900646C7B /* GameScene.swift in Sources */,
 				4D7DF9071ABA936B00E2A05A /* TriangleShotEffect.swift in Sources */,
+				4DDBD2B51AF26FB50007A186 /* TurretObject.swift in Sources */,
 				4D7DF9031ABA883F00E2A05A /* ExplosionEffect.swift in Sources */,
 				4D72F50D1AB1D7FB004DC046 /* Player.swift in Sources */,
 				4DAEE4C31AB626B6003F9CD5 /* Ability.swift in Sources */,
@@ -298,12 +304,12 @@
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
-		4DFFB2151AE8BD640005CAD4 /* Main.storyboard */ = {
+		4DC07F321AF206FB0080E895 /* Main2.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4DFFB2161AE8BD640005CAD4 /* Base */,
+				4DC07F331AF206FB0080E895 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Main2.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
