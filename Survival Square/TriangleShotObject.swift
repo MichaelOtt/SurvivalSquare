@@ -17,7 +17,14 @@ class TriangleShotObject: EffectObject
         xScale = 0.1
         yScale = 0.1
     }
-    
+    init(scale: CGFloat, rotation: CGFloat)
+    {
+        super.init(imageName:"triangleShot")
+        speed = 10
+        xScale = scale
+        yScale = scale
+        zRotation = rotation
+    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

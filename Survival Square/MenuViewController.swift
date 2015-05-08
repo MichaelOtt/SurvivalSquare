@@ -14,7 +14,7 @@ class MenuViewController: UIViewController {
     override func viewDidLoad()
     {
         abilities.append(ExplosionEffect())
-        abilities.append(ExplosionEffect())
+        abilities.append(TurretEffect())
         abilities.append(TriangleShotEffect())
         super.viewDidLoad()
         //let storyboard: UIStoryboard = UIStoryboard(name:"Main", bundle:nil)

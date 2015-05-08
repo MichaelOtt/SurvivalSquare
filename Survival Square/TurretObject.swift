@@ -15,8 +15,8 @@ class TurretObject: EffectObject
     {
         super.init(imageName:"turret")
         speed = 0
-        xScale = 0.1
-        yScale = 0.1
+        xScale = 0.07
+        yScale = 0.07
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,7 +24,25 @@ class TurretObject: EffectObject
     }
     override func update(scene: GameScene)
     {
-        
+        tickCounter++
+        var closestEnemy = getClosest(scene)
+        if (closestEnemy != nil)
+        {
+            var dx:Float = Float(closestEnemy!.position.x - self.position.x)
+            var dy:Float = Float(closestEnemy!.position.y - self.position.y)
+            self.zRotation = CGFloat(atan2f(dy,dx))
+            if (tickCounter % 100 == 0)
+            {
+                let triangleShot = TriangleShotObject(scale:0.05,rotation:self.zRotation-CGFloat(M_PI/2.0))
+                triangleShot.position = self.position
+                scene.effectObjects.append(triangleShot)
+                scene.addChild(triangleShot)
+            }
+        }
+        if (tickCounter >= 700)
+        {
+            removed = true
+        }
     }
     func getClosest(scene: GameScene) -> Enemy?
     {

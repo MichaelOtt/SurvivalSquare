@@ -13,14 +13,13 @@ class TriangleShotEffect:Effect
 {
     override func activate()
     {
-        let triangleShot = TriangleShotObject()
+        let triangleShot = TriangleShotObject(scale:0.1,rotation:scene!.player.zRotation)
         triangleShot.position = scene!.player.position
-        triangleShot.zRotation = scene!.player.zRotation
         scene!.effectObjects.append(triangleShot)
         scene!.addChild(triangleShot)
     }
     override func getCooldown() -> Int
     {
-        return 200
+        return 100
     }
 }
