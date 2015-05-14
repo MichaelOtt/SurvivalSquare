@@ -16,7 +16,7 @@ class Player: SKSpriteNode
     {
         let texture = SKTexture(imageNamed: "greenDot")
         super.init(texture: texture, color: nil, size: texture.size())
-        speed = 2
+        speed = 10
         xScale = 0.035
         yScale = 0.035
         zPosition = 100

@@ -12,12 +12,13 @@ import SpriteKit
 class Enemy: SKSpriteNode
 {
     var time:CGFloat = 0
-    let maxSpeed:CGFloat = 7
-    init()
+    var maxSpeed:CGFloat
+    init(initialspeed:CGFloat, maxSpeed:CGFloat)
     {
         let texture = SKTexture(imageNamed: "redDot")
+        self.maxSpeed = maxSpeed
         super.init(texture: texture, color: nil, size: texture.size())
-        speed = 1
+        speed = initialspeed
         xScale = 0.025
         yScale = 0.025
         zPosition = 2

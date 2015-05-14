@@ -19,13 +19,24 @@ class GameScene: SKScene
     var scoreLbl:UILabel
     var stopped = false
     var selectedAbilities = [Effect]()
+    var difficulty:Int = 0
+    var spawnrate:Double = 1
+    var enemySpeed:CGFloat = 0.5
+    var enemySpeedMax:CGFloat = 5
     /*class func scene(size:CGSize)->GameScene
     {
         return GameScene(size:size)
     }*/
-    init(size:CGSize,vc:GameViewController,abilities:[Effect])
+    init(size:CGSize,vc:GameViewController,abilities:[Effect],difficulty:Int)
     {
         self.vc = vc
+        self.difficulty = difficulty
+        if (difficulty == 1)
+        {
+            spawnrate = 0.5
+            enemySpeed = 1.5
+            enemySpeedMax = 7
+        }
         self.selectedAbilities=abilities
         scoreLbl = UILabel()
         scoreLbl.frame = CGRectMake(10,10,200,21);
@@ -126,10 +137,9 @@ class GameScene: SKScene
     }
     func moveWithValues(xvalue:CGFloat,yvalue:CGFloat)
     {
-        let speed:CGFloat = 10
         let px = player.position.x
         let py = player.position.y
-        player.changePosition(px+speed*xvalue,y:py+speed*yvalue)
+        player.changePosition(px+player.speed*xvalue,y:py+player.speed*yvalue)
         checkBounds()
     }
     func checkBounds()
@@ -162,7 +172,7 @@ class GameScene: SKScene
     }
     func createEnemyAtPosition(position:CGPoint)
     {
-        let enemySprite = Enemy()
+        let enemySprite = Enemy(initialspeed: enemySpeed,maxSpeed: enemySpeedMax)
         enemySprite.position = position
         enemies.append(enemySprite)
         self.addChild(enemySprite)
@@ -236,15 +246,15 @@ class GameScene: SKScene
                     }
                 }
             }
-            if (random()%50 == 0)
+            if (random()%Int(80*spawnrate) == 0)
             {
                 createEnemy()
             }
-            if (random()%1000 == 0)
+            if (random()%Int(1500*spawnrate) == 0)
             {
                 createEnemyBlock()
             }
-            if (random()%1000 == 0)
+            if (random()%Int(1500*spawnrate) == 0)
             {
                 createEnemyCircle()
             }

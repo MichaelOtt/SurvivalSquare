@@ -30,6 +30,7 @@ extension SKNode {
 class GameViewController: UIViewController {
     
     var abilities = [Effect]()
+    var difficulty:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         //if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
@@ -46,7 +47,7 @@ class GameViewController: UIViewController {
             //height = view.frame.size.width
         //}
         
-        let scene = GameScene(size:CGSize(width:width,height:height),vc:self,abilities:abilities)
+        let scene = GameScene(size:CGSize(width:width,height:height),vc:self,abilities:abilities,difficulty: difficulty)
         // Configure the view.
         let skView = self.view as! SKView
         //skView.showsFPS = true
@@ -64,6 +65,10 @@ class GameViewController: UIViewController {
     func setCurrentAbilities(abilities: [Effect])
     {
         self.abilities = abilities
+    }
+    func setDiff(difficulty: Int)
+    {
+        self.difficulty = difficulty
     }
     func segueToMain()
     {

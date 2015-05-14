@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="height" constant="45" id="Z3y-64-53n"/>
                                     <constraint firstAttribute="width" constant="122" id="dkj-Je-gpm"/>
                                 </constraints>
-                                <state key="normal" title="Play" backgroundImage="button2">
+                                <state key="normal" title="Play(Easy)" backgroundImage="button2">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -47,11 +47,27 @@
                                     <segue destination="MFS-e7-1Fu" kind="show" identifier="showSelectionView" id="QxL-1y-mcH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osr-qe-xEe">
+                                <rect key="frame" x="239" y="329" width="122" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Bv7-4g-FGK"/>
+                                    <constraint firstAttribute="width" constant="122" id="DFQ-yW-H30"/>
+                                </constraints>
+                                <state key="normal" title="Play(Hard)" backgroundImage="button2">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" identifier="showGameView(hard)" id="5rk-5O-o08"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="lsE-29-P9X" secondAttribute="centerY" constant="54.5" id="8Ni-1l-QAa"/>
+                            <constraint firstAttribute="centerX" secondItem="osr-qe-xEe" secondAttribute="centerX" id="VVX-nO-Asr"/>
                             <constraint firstAttribute="centerY" secondItem="Yt2-v9-TDW" secondAttribute="centerY" constant="1.5" id="e2b-zc-8uw"/>
+                            <constraint firstAttribute="centerY" secondItem="osr-qe-xEe" secondAttribute="centerY" constant="-51.5" id="ebw-cg-V3i"/>
                             <constraint firstAttribute="centerX" secondItem="lsE-29-P9X" secondAttribute="centerX" id="lZZ-hS-45w"/>
                             <constraint firstAttribute="centerX" secondItem="Yt2-v9-TDW" secondAttribute="centerX" id="pAz-Lf-EUc"/>
                         </constraints>
@@ -177,4 +193,7 @@
         <image name="AbilityTurret" width="500" height="500"/>
         <image name="button2" width="660" height="420"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5rk-5O-o08"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -47,6 +47,13 @@ class MenuViewController: UIViewController {
         {
             let vc = segue.destinationViewController as? GameViewController
             vc?.setCurrentAbilities(abilities)
+            vc?.setDiff(0)//easy
+        }
+        if segue.identifier=="showGameView(hard)"
+        {
+            let vc = segue.destinationViewController as? GameViewController
+            vc?.setCurrentAbilities(abilities)
+            vc?.setDiff(1)//hard
         }
         if segue.identifier=="showSelectionView"
         {
