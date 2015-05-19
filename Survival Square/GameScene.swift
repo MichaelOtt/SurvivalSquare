@@ -41,6 +41,7 @@ class GameScene: SKScene
         scoreLbl = UILabel()
         scoreLbl.frame = CGRectMake(10,10,200,21);
         scoreLbl.text = "\(score)"
+        scoreLbl.textColor = UIColor.whiteColor()
         super.init(size:size)
     }
 
@@ -102,9 +103,17 @@ class GameScene: SKScene
             {
                 imageName = "AbilityTriangleShot"
             }
-            else
+            else if (effect is TurretEffect)
             {
                 imageName = "AbilityTurret"
+            }
+            else if (effect is ShockWaveEffect)
+            {
+                imageName = "AbilityShockWave"
+            }
+            else
+            {
+                imageName = "oops"
             }
             let abilityButton = Ability(effect:effect,imageName:imageName,cooldown:effect.getCooldown())
             abilityButton.position = CGPointMake(self.size.width - (abilityButton.size.width * (1.0+1.5*CGFloat(i))),0 + abilityButton.size.height)
@@ -272,8 +281,9 @@ class GameScene: SKScene
             {
                 ability.update()
             }
-            for child:Enemy in enemies
+            for (var i = 0; i < enemies.count; i++)
             {
+                var child = enemies[i]
                 child.update(player.position)
                 if (child.checkContact(player))
                 {
@@ -283,6 +293,14 @@ class GameScene: SKScene
                     //self.motionManager.
                     vc?.segueToMain()
                     vc = nil
+                }
+                if (child.checkBounds(self))
+                {
+                    child.removeFromParent()
+                    enemies.removeAtIndex(i)
+                    i--
+                    score++
+                    scoreLbl.text = "\(score)"
                 }
             }
         

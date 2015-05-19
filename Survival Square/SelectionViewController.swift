@@ -62,7 +62,6 @@ class SelectionViewController: UIViewController {
         if (currentSelection != -1)
         {
             abilities[currentSelection] = ExplosionEffect()
-            //selectBtn1.highlighted = false
             currentSelection = -1
         }
         updateButtons()
@@ -72,7 +71,6 @@ class SelectionViewController: UIViewController {
         if (currentSelection != -1)
         {
             abilities[currentSelection] = TriangleShotEffect()
-            //selectBtn1.highlighted = false
             currentSelection = -1
         }
         updateButtons()
@@ -82,7 +80,15 @@ class SelectionViewController: UIViewController {
         if (currentSelection != -1)
         {
             abilities[currentSelection] = TurretEffect()
-            //selectBtn1.highlighted = false
+            currentSelection = -1
+        }
+        updateButtons()
+    }
+    @IBAction func shockWaveAbility(sender: UIButton)
+    {
+        if (currentSelection != -1)
+        {
+            abilities[currentSelection] = ShockWaveEffect()
             currentSelection = -1
         }
         updateButtons()
@@ -100,6 +106,10 @@ class SelectionViewController: UIViewController {
         else if ability is TurretEffect
         {
             return "AbilityTurret"
+        }
+        else if ability is ShockWaveEffect
+        {
+            return "AbilityShockWave"
         }
         return "NoEffect"
     }

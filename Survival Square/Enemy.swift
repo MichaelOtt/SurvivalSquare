@@ -13,6 +13,12 @@ class Enemy: SKSpriteNode
 {
     var time:CGFloat = 0
     var maxSpeed:CGFloat
+    var pushed = false
+    var currentSpeedX:CGFloat = 0
+    var currentSpeedY:CGFloat = 0
+    let DECEL_FRICTION:CGFloat = 0.03
+    var decelX:CGFloat = 0
+    var decelY:CGFloat = 0
     init(initialspeed:CGFloat, maxSpeed:CGFloat)
     {
         let texture = SKTexture(imageNamed: "redDot")
@@ -29,19 +35,49 @@ class Enemy: SKSpriteNode
     func update(player:CGPoint)
     {
         time++
-        if (time > 50)
+        if (pushed)
         {
-            moveTowardsPoint(player)
-            if (speed < maxSpeed)
+            self.position = CGPointMake(self.position.x + currentSpeedX, self.position.y + currentSpeedY)
+            currentSpeedX -= decelX
+            currentSpeedY -= decelY
+            if (abs(currentSpeedX) <= 0.1 && abs(currentSpeedY) <= 0.1)
             {
-                speed += time*0.00001
+                pushed = false
             }
-            else
+        }
+        else
+        {
+            if (time > 50)
             {
-                speed = maxSpeed
+                moveTowardsPoint(player)
+                if (speed < maxSpeed)
+                {
+                    speed += time*0.00001
+                }
+                else
+                {
+                    speed = maxSpeed
+                }
             }
         }
         
+    }
+    func pushFromPoint(point:CGPoint, power:CGFloat)
+    {
+        var dx = point.x - self.position.x
+        var dy = point.y - self.position.y
+        let hyp = sqrt(dx*dx + dy*dy)
+        var normalx = dx/hyp
+        var normaly = dy/hyp
+        pushed = true
+        currentSpeedX = -normalx * power/hyp
+        currentSpeedY = -normaly * power/hyp
+        //let xSign = normalx/abs(normalx)
+        //let ySign = normaly/abs(normaly)
+        //decelX = currentSpeedX/100
+        //decelY = currentSpeedY/100
+        decelX = -normalx*DECEL_FRICTION
+        decelY = -normaly*DECEL_FRICTION
     }
     func moveTowardsPoint(point:CGPoint)
     {
@@ -51,6 +87,26 @@ class Enemy: SKSpriteNode
         var normalx = dx/hyp
         var normaly = dy/hyp
         self.position = CGPointMake(self.position.x + normalx*speed, self.position.y + normaly*speed)
+    }
+    func checkBounds(scene:GameScene)->Bool
+    {
+        if (position.x < 0)
+        {
+            return true
+        }
+        if (position.y < 0)
+        {
+            return true
+        }
+        if (position.x > scene.frame.width)
+        {
+            return true
+        }
+        if (position.y > scene.frame.height)
+        {
+            return true
+        }
+        return false
     }
     func checkContact(player:Player)->Bool
     {

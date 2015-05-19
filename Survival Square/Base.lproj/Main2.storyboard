@@ -144,6 +144,19 @@
                                     <action selector="turretAbility:" destination="MFS-e7-1Fu" eventType="touchUpInside" id="AyX-SR-DsC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdS-a2-0He">
+                                <rect key="frame" x="305" y="87" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="pEb-RW-Il5"/>
+                                    <constraint firstAttribute="height" constant="75" id="wzj-fE-BNL"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="AbilityShockWave">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shockWaveAbility:" destination="MFS-e7-1Fu" eventType="touchUpInside" id="XEO-hG-adD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -151,7 +164,9 @@
                             <constraint firstItem="SsP-wD-i0G" firstAttribute="leading" secondItem="BzA-bA-hpM" secondAttribute="trailing" constant="20" id="EWo-2q-94t"/>
                             <constraint firstItem="g0t-F0-wvz" firstAttribute="leading" secondItem="oXQ-Vs-KvL" secondAttribute="leadingMargin" constant="4" id="GVS-oZ-Yd9"/>
                             <constraint firstItem="0WT-P2-NvR" firstAttribute="leading" secondItem="oXQ-Vs-KvL" secondAttribute="leadingMargin" constant="4" id="LoR-p3-z6r"/>
+                            <constraint firstItem="RdS-a2-0He" firstAttribute="top" secondItem="qvP-Op-pO3" secondAttribute="bottom" constant="67" id="bmX-yg-g7v"/>
                             <constraint firstItem="g0t-F0-wvz" firstAttribute="top" secondItem="qvP-Op-pO3" secondAttribute="bottom" constant="8" id="dBr-V5-WPx"/>
+                            <constraint firstItem="RdS-a2-0He" firstAttribute="leading" secondItem="SsP-wD-i0G" secondAttribute="trailing" constant="20" id="gle-tn-m5i"/>
                             <constraint firstItem="0WT-P2-NvR" firstAttribute="top" secondItem="g0t-F0-wvz" secondAttribute="bottom" constant="15" id="jaG-hz-eup"/>
                             <constraint firstItem="BzA-bA-hpM" firstAttribute="leading" secondItem="0WT-P2-NvR" secondAttribute="trailing" constant="20" id="rSK-Pl-HCD"/>
                             <constraint firstItem="BzA-bA-hpM" firstAttribute="top" secondItem="qvP-Op-pO3" secondAttribute="bottom" constant="67" id="vOU-3g-33M"/>
@@ -189,6 +204,7 @@
     </scenes>
     <resources>
         <image name="AbilityExplosion" width="500" height="500"/>
+        <image name="AbilityShockWave" width="500" height="500"/>
         <image name="AbilityTriangleShot" width="500" height="500"/>
         <image name="AbilityTurret" width="500" height="500"/>
         <image name="button2" width="660" height="420"/>

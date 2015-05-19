@@ -20,6 +20,6 @@ class TriangleShotEffect:Effect
     }
     override func getCooldown() -> Int
     {
-        return 100
+        return 50
     }
 }

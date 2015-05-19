@@ -11,6 +11,8 @@
 		4D284EA81AAA761C006EC2F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D284EA71AAA761C006EC2F5 /* Images.xcassets */; };
 		4D284EAB1AAA761C006EC2F5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D284EA91AAA761C006EC2F5 /* LaunchScreen.xib */; };
 		4D284EB71AAA761C006EC2F5 /* Survival_SquareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D284EB61AAA761C006EC2F5 /* Survival_SquareTests.swift */; };
+		4D5A42BD1B0B1E3300F9FEBE /* ShockWaveEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5A42BC1B0B1E3300F9FEBE /* ShockWaveEffect.swift */; };
+		4D5A42BF1B0B1E7100F9FEBE /* ShockWaveObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5A42BE1B0B1E7100F9FEBE /* ShockWaveObject.swift */; };
 		4D72F50D1AB1D7FB004DC046 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D72F50C1AB1D7FB004DC046 /* Player.swift */; };
 		4D79C9D31AE8B0FA0069307E /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D79C9D21AE8B0FA0069307E /* SelectionViewController.swift */; };
 		4D7DF9031ABA883F00E2A05A /* ExplosionEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DF9021ABA883F00E2A05A /* ExplosionEffect.swift */; };
@@ -49,6 +51,8 @@
 		4D284EB01AAA761C006EC2F5 /* Survival SquareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Survival SquareTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D284EB51AAA761C006EC2F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D284EB61AAA761C006EC2F5 /* Survival_SquareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survival_SquareTests.swift; sourceTree = "<group>"; };
+		4D5A42BC1B0B1E3300F9FEBE /* ShockWaveEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShockWaveEffect.swift; sourceTree = "<group>"; };
+		4D5A42BE1B0B1E7100F9FEBE /* ShockWaveObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShockWaveObject.swift; sourceTree = "<group>"; };
 		4D72F50C1AB1D7FB004DC046 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4D79C9D21AE8B0FA0069307E /* SelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		4D7DF9021ABA883F00E2A05A /* ExplosionEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplosionEffect.swift; sourceTree = "<group>"; };
@@ -110,10 +114,12 @@
 				4DAEE4C21AB626B6003F9CD5 /* Ability.swift */,
 				4DAEE4C41AB626DC003F9CD5 /* Effect.swift */,
 				4D7DF9021ABA883F00E2A05A /* ExplosionEffect.swift */,
+				4D5A42BC1B0B1E3300F9FEBE /* ShockWaveEffect.swift */,
 				4D7DF9061ABA936B00E2A05A /* TriangleShotEffect.swift */,
 				4DDBD2B21AF26F430007A186 /* TurretEffect.swift */,
 				4DAEE4C81AB63115003F9CD5 /* EffectObject.swift */,
 				4D7DF9041ABA888C00E2A05A /* ExplosionObject.swift */,
+				4D5A42BE1B0B1E7100F9FEBE /* ShockWaveObject.swift */,
 				4D7DF9081ABA938A00E2A05A /* TriangleShotObject.swift */,
 				4DDBD2B41AF26FB50007A186 /* TurretObject.swift */,
 				4D284EA01AAA761C006EC2F5 /* AppDelegate.swift */,
@@ -262,7 +268,9 @@
 				4DAEE4C91AB63115003F9CD5 /* EffectObject.swift in Sources */,
 				4D7DF9091ABA938A00E2A05A /* TriangleShotObject.swift in Sources */,
 				4DFEB8811AC3DCA5001FEF24 /* MenuViewController.swift in Sources */,
+				4D5A42BD1B0B1E3300F9FEBE /* ShockWaveEffect.swift in Sources */,
 				4DDBD2B31AF26F430007A186 /* TurretEffect.swift in Sources */,
+				4D5A42BF1B0B1E7100F9FEBE /* ShockWaveObject.swift in Sources */,
 				4D7DF9051ABA888C00E2A05A /* ExplosionObject.swift in Sources */,
 				4DFEB87F1AC3DC28001FEF24 /* GameViewController.swift in Sources */,
 				4DAEE4C51AB626DC003F9CD5 /* Effect.swift in Sources */,
