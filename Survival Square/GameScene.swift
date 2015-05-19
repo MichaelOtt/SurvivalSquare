@@ -111,6 +111,10 @@ class GameScene: SKScene
             {
                 imageName = "AbilityShockWave"
             }
+            else if (effect is ForceFieldEffect)
+            {
+                imageName = "AbilityShockWave"
+            }
             else
             {
                 imageName = "oops"

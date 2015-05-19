@@ -93,6 +93,15 @@ class SelectionViewController: UIViewController {
         }
         updateButtons()
     }
+    @IBAction func forceFieldAbility(sender: UIButton)
+    {
+        if (currentSelection != -1)
+        {
+            abilities[currentSelection] = ForceFieldEffect()
+            currentSelection = -1
+        }
+        updateButtons()
+    }
     func getImageName(ability: Effect) -> String
     {
         if ability is ExplosionEffect
@@ -108,6 +117,10 @@ class SelectionViewController: UIViewController {
             return "AbilityTurret"
         }
         else if ability is ShockWaveEffect
+        {
+            return "AbilityShockWave"
+        }
+        else if ability is ForceFieldEffect
         {
             return "AbilityShockWave"
         }

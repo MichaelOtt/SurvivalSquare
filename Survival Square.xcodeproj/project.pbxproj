@@ -26,6 +26,8 @@
 		4DB76B8A1AAC2B2900646C7B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB76B891AAC2B2900646C7B /* GameScene.swift */; };
 		4DB76B8C1AAC385800646C7B /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB76B8B1AAC385800646C7B /* Enemy.swift */; };
 		4DC07F341AF206FB0080E895 /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DC07F321AF206FB0080E895 /* Main2.storyboard */; };
+		4DC0AFB61B0B7F9E00BEB4A0 /* ForceFieldEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC0AFB51B0B7F9E00BEB4A0 /* ForceFieldEffect.swift */; };
+		4DC0AFB81B0B7FAC00BEB4A0 /* ForceFieldObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC0AFB71B0B7FAC00BEB4A0 /* ForceFieldObject.swift */; };
 		4DDBD2B31AF26F430007A186 /* TurretEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBD2B21AF26F430007A186 /* TurretEffect.swift */; };
 		4DDBD2B51AF26FB50007A186 /* TurretObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDBD2B41AF26FB50007A186 /* TurretObject.swift */; };
 		4DFEB87F1AC3DC28001FEF24 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEB87E1AC3DC28001FEF24 /* GameViewController.swift */; };
@@ -66,6 +68,8 @@
 		4DB76B891AAC2B2900646C7B /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		4DB76B8B1AAC385800646C7B /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		4DC07F331AF206FB0080E895 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main2.storyboard; sourceTree = "<group>"; };
+		4DC0AFB51B0B7F9E00BEB4A0 /* ForceFieldEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceFieldEffect.swift; sourceTree = "<group>"; };
+		4DC0AFB71B0B7FAC00BEB4A0 /* ForceFieldObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceFieldObject.swift; sourceTree = "<group>"; };
 		4DDBD2B21AF26F430007A186 /* TurretEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurretEffect.swift; sourceTree = "<group>"; };
 		4DDBD2B41AF26FB50007A186 /* TurretObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurretObject.swift; sourceTree = "<group>"; };
 		4DFEB87E1AC3DC28001FEF24 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				4D284EA71AAA761C006EC2F5 /* Images.xcassets */,
 				4D284EA91AAA761C006EC2F5 /* LaunchScreen.xib */,
 				4D284E9E1AAA761C006EC2F5 /* Supporting Files */,
+				4DC0AFB51B0B7F9E00BEB4A0 /* ForceFieldEffect.swift */,
+				4DC0AFB71B0B7FAC00BEB4A0 /* ForceFieldObject.swift */,
 			);
 			path = "Survival Square";
 			sourceTree = "<group>";
@@ -267,6 +273,7 @@
 				4DB76B8C1AAC385800646C7B /* Enemy.swift in Sources */,
 				4DAEE4C91AB63115003F9CD5 /* EffectObject.swift in Sources */,
 				4D7DF9091ABA938A00E2A05A /* TriangleShotObject.swift in Sources */,
+				4DC0AFB81B0B7FAC00BEB4A0 /* ForceFieldObject.swift in Sources */,
 				4DFEB8811AC3DCA5001FEF24 /* MenuViewController.swift in Sources */,
 				4D5A42BD1B0B1E3300F9FEBE /* ShockWaveEffect.swift in Sources */,
 				4DDBD2B31AF26F430007A186 /* TurretEffect.swift in Sources */,
@@ -280,6 +287,7 @@
 				4D7DF9031ABA883F00E2A05A /* ExplosionEffect.swift in Sources */,
 				4D72F50D1AB1D7FB004DC046 /* Player.swift in Sources */,
 				4DAEE4C31AB626B6003F9CD5 /* Ability.swift in Sources */,
+				4DC0AFB61B0B7F9E00BEB4A0 /* ForceFieldEffect.swift in Sources */,
 				4D284EA11AAA761C006EC2F5 /* AppDelegate.swift in Sources */,
 				4D79C9D31AE8B0FA0069307E /* SelectionViewController.swift in Sources */,
 			);
