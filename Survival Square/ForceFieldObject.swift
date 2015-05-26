@@ -24,7 +24,7 @@ class ForceFieldObject: EffectObject
     override func update(scene: GameScene)
     {
         tickCounter++
-        if (tickCounter > 100)
+        if (tickCounter > 200)
         {
             removed = true
         }
@@ -41,7 +41,7 @@ class ForceFieldObject: EffectObject
             let smallRadius = scene.enemies[i].frame.width/2
             if (dx*dx + dy*dy <= (radius+smallRadius)*(radius+smallRadius))
             {
-                scene.enemies[i].pushFromPoint(scene.player.position,power: 150)
+                scene.enemies[i].pushFromPoint(scene.player.position,power: 200)
             }
         }
     }

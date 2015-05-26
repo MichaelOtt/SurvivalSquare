@@ -92,7 +92,7 @@ class GameScene: SKScene
     {
         for (var i = 0; i < abilities.count; i++)
         {
-            let effect = abilities[i]
+            let effect = abilities[abilities.count-i-1]
             effect.getScene(self)
             var imageName:String
             if (effect is ExplosionEffect)
@@ -113,7 +113,7 @@ class GameScene: SKScene
             }
             else if (effect is ForceFieldEffect)
             {
-                imageName = "AbilityShockWave"
+                imageName = "AbilityForceField"
             }
             else
             {
@@ -295,6 +295,7 @@ class GameScene: SKScene
                     self.removeAllChildren()
                     self.scoreLbl.removeFromSuperview()
                     //self.motionManager.
+                    motionManager.stopAccelerometerUpdates()
                     vc?.segueToMain()
                     vc = nil
                 }

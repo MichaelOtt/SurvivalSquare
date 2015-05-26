@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTI-3D-DRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="235" y="219"/>
+            <point key="canvasLocation" x="17" y="181"/>
         </scene>
         <!--Selection View Controller-->
         <scene sceneID="bt8-0d-ek7">
@@ -163,7 +163,7 @@
                                     <constraint firstAttribute="height" constant="75" id="XEE-dp-bJE"/>
                                     <constraint firstAttribute="width" constant="75" id="bQQ-Cr-8jc"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="AbilityShockWave">
+                                <state key="normal" title="Button" image="AbilityForceField">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -191,7 +191,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlk-Ww-Ly2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Jp9-dw-gMk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="235" y="-467"/>
+            <point key="canvasLocation" x="727" y="-481"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -214,11 +214,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <exit id="uQR-AA-Iuf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="965" y="219"/>
+            <point key="canvasLocation" x="895" y="181"/>
         </scene>
     </scenes>
     <resources>
         <image name="AbilityExplosion" width="500" height="500"/>
+        <image name="AbilityForceField" width="500" height="500"/>
         <image name="AbilityShockWave" width="500" height="500"/>
         <image name="AbilityTriangleShot" width="500" height="500"/>
         <image name="AbilityTurret" width="500" height="500"/>

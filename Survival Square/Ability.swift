@@ -14,6 +14,7 @@ class Ability: SKSpriteNode
     let cooldown:Int
     var count:Int
     let cooldownrect:SKShapeNode
+    let indicatorRect:SKShapeNode
     init(effect:Effect, imageName:String, cooldown:Int)
     {
         self.effect = effect
@@ -21,6 +22,7 @@ class Ability: SKSpriteNode
         self.cooldown = cooldown
         self.count = cooldown
         cooldownrect = SKShapeNode()
+        indicatorRect = SKShapeNode()
         super.init(texture: texture, color: nil, size: texture.size())
         speed = 2
         xScale = 0.1
@@ -50,10 +52,12 @@ class Ability: SKSpriteNode
         {
             let coolpercent:CGFloat = (CGFloat(cooldown-count)/CGFloat(cooldown))
             cooldownrect.yScale = coolpercent
+            indicatorRect.yScale = 1;
         }
         else
         {
             cooldownrect.yScale = 0
+            indicatorRect.yScale = 0;
         }
     }
     func createCooldownRect(scene:GameScene)
@@ -66,5 +70,13 @@ class Ability: SKSpriteNode
         cooldownrect.strokeColor = color
         cooldownrect.zPosition = 100
         scene.addChild(cooldownrect)
+
+        let color2:UIColor = UIColor(red:1,green:0,blue:0,alpha:0.15)
+        indicatorRect.position = CGPointMake(self.position.x-self.frame.width/2,self.position.y-self.frame.height/2)
+        indicatorRect.path = CGPathCreateWithRect(rect, nil)
+        indicatorRect.fillColor = color2
+        indicatorRect.strokeColor = color2
+        indicatorRect.zPosition = 100
+        scene.addChild(indicatorRect)
     }
 }

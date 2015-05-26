@@ -18,7 +18,7 @@ class ForceFieldEffect:Effect
     }
     override func getCooldown() -> Int
     {
-        return 500
+        return 800
     }
     
 }

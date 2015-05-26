@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D1C07741B14DE32003A1AB7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D1C07731B14DE32003A1AB7 /* Images.xcassets */; };
 		4D284EA11AAA761C006EC2F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D284EA01AAA761C006EC2F5 /* AppDelegate.swift */; };
-		4D284EA81AAA761C006EC2F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D284EA71AAA761C006EC2F5 /* Images.xcassets */; };
 		4D284EAB1AAA761C006EC2F5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D284EA91AAA761C006EC2F5 /* LaunchScreen.xib */; };
 		4D284EB71AAA761C006EC2F5 /* Survival_SquareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D284EB61AAA761C006EC2F5 /* Survival_SquareTests.swift */; };
 		4D5A42BD1B0B1E3300F9FEBE /* ShockWaveEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5A42BC1B0B1E3300F9FEBE /* ShockWaveEffect.swift */; };
@@ -45,10 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D1C07731B14DE32003A1AB7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4D284E9B1AAA761C006EC2F5 /* Survival Square.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Survival Square.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D284E9F1AAA761C006EC2F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D284EA01AAA761C006EC2F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4D284EA71AAA761C006EC2F5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4D284EAA1AAA761C006EC2F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4D284EB01AAA761C006EC2F5 /* Survival SquareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Survival SquareTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D284EB51AAA761C006EC2F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,11 +121,13 @@
 				4D5A42BC1B0B1E3300F9FEBE /* ShockWaveEffect.swift */,
 				4D7DF9061ABA936B00E2A05A /* TriangleShotEffect.swift */,
 				4DDBD2B21AF26F430007A186 /* TurretEffect.swift */,
+				4DC0AFB51B0B7F9E00BEB4A0 /* ForceFieldEffect.swift */,
 				4DAEE4C81AB63115003F9CD5 /* EffectObject.swift */,
 				4D7DF9041ABA888C00E2A05A /* ExplosionObject.swift */,
 				4D5A42BE1B0B1E7100F9FEBE /* ShockWaveObject.swift */,
 				4D7DF9081ABA938A00E2A05A /* TriangleShotObject.swift */,
 				4DDBD2B41AF26FB50007A186 /* TurretObject.swift */,
+				4DC0AFB71B0B7FAC00BEB4A0 /* ForceFieldObject.swift */,
 				4D284EA01AAA761C006EC2F5 /* AppDelegate.swift */,
 				4DB76B871AAC2AF300646C7B /* GameScene.sks */,
 				4DB76B8B1AAC385800646C7B /* Enemy.swift */,
@@ -135,11 +137,9 @@
 				4DFEB8801AC3DCA5001FEF24 /* MenuViewController.swift */,
 				4D79C9D21AE8B0FA0069307E /* SelectionViewController.swift */,
 				4DC07F321AF206FB0080E895 /* Main2.storyboard */,
-				4D284EA71AAA761C006EC2F5 /* Images.xcassets */,
 				4D284EA91AAA761C006EC2F5 /* LaunchScreen.xib */,
+				4D1C07731B14DE32003A1AB7 /* Images.xcassets */,
 				4D284E9E1AAA761C006EC2F5 /* Supporting Files */,
-				4DC0AFB51B0B7F9E00BEB4A0 /* ForceFieldEffect.swift */,
-				4DC0AFB71B0B7FAC00BEB4A0 /* ForceFieldObject.swift */,
 			);
 			path = "Survival Square";
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 			files = (
 				4DB76B881AAC2AF300646C7B /* GameScene.sks in Resources */,
 				4D284EAB1AAA761C006EC2F5 /* LaunchScreen.xib in Resources */,
-				4D284EA81AAA761C006EC2F5 /* Images.xcassets in Resources */,
+				4D1C07741B14DE32003A1AB7 /* Images.xcassets in Resources */,
 				4DC07F341AF206FB0080E895 /* Main2.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

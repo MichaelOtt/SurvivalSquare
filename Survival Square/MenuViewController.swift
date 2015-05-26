@@ -24,7 +24,8 @@ class MenuViewController: UIViewController {
     override func supportedInterfaceOrientations() -> Int {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
             //return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
-            return Int(UIInterfaceOrientationMask.Landscape.rawValue)
+            return Int(UIInterfaceOrientationMask.LandscapeRight.rawValue)
+            //return Int(UIInterfaceOrientationMask.Landscape.rawValue)
         } else {
             return Int(UIInterfaceOrientationMask.All.rawValue)
         }
